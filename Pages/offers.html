@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers & Deals - FreshMart</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/offers.css">
+      <link rel="stylesheet" href="../Styles/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                 
+            <a href="category.html" class="nav-link" data-page="categories">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+                <div class="link-underline"></div>
+            </a>
+
+
+
+                <a href="offers.html" class="nav-link active" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                  
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                        <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+
+            
+        
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="offers-page">
+        <div class="container">
+            <!-- Hero Banner -->
+            <section class="hero-banner">
+                <div class="hero-content">
+                    <h1 class="hero-title">Special Offers & Deals</h1>
+                    <p class="hero-subtitle">Satisfy your cravings with fresh groceries delivered fast. Exclusive
+                        discounts for university students!</p>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search your favourite food..." class="search-input-large">
+                        <button class="search-btn-large">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Daily Offers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30%</span>
+                            <span class="stat-label">Max Discount</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Restaurants</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../Images/OffersBanner.jpg"
+                        alt="Fresh Groceries">
+                </div>
+            </section>
+
+            <!-- Promo Code Banner -->
+            <section class="promo-section">
+                <div class="promo-header">
+                    <h2>Exclusive Discount Coupons</h2>
+                    <p>Use these promo codes at checkout for instant savings</p>
+                </div>
+                <div class="coupons-grid">
+                    <div class="coupon-card">
+                        <div class="coupon-header">
+                            <span class="coupon-code">STUDENT30</span>
+                            <div class="coupon-badge">30% OFF</div>
+                        </div>
+                        <div class="coupon-body">
+                            <p>Get 30% off on your first order</p>
+                            <div class="coupon-validity">
+                                <i class="fas fa-clock"></i>
+                                <span>Valid for 30 days</span>
+                            </div>
+                        </div>
+                        <button class="btn-copy" onclick="copyPromoCode('STUDENT30')">
+                            <i class="fas fa-copy"></i>
+                            Copy Code
+                        </button>
+                    </div>
+
+                    <div class="coupon-card featured">
+                        <div class="coupon-header">
+                            <span class="coupon-code">MEGA50</span>
+                            <div class="coupon-badge">50% OFF</div>
+                        </div>
+                        <div class="coupon-body">
+                            <p>50% off on selected items</p>
+                            <div class="coupon-validity">
+                                <i class="fas fa-clock"></i>
+                                <span>Valid for 7 days</span>
+                            </div>
+                        </div>
+                        <button class="btn-copy" onclick="copyPromoCode('MEGA50')">
+                            <i class="fas fa-copy"></i>
+                            Copy Code
+                        </button>
+                    </div>
+
+                    <div class="coupon-card">
+                        <div class="coupon-header">
+                            <span class="coupon-code">FREESHIP</span>
+                            <div class="coupon-badge">FREE DELIVERY</div>
+                        </div>
+                        <div class="coupon-body">
+                            <p>Free delivery on orders above $25</p>
+                            <div class="coupon-validity">
+                                <i class="fas fa-clock"></i>
+                                <span>Valid for 15 days</span>
+                            </div>
+                        </div>
+                        <button class="btn-copy" onclick="copyPromoCode('FREESHIP')">
+                            <i class="fas fa-copy"></i>
+                            Copy Code
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Offers Navigation -->
+            <nav class="offers-categories">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-fire"></i>
+                    All Offers
+                </button>
+                <button class="category-btn" data-category="discounts">
+                    <i class="fas fa-percentage"></i>
+                    Discounts
+                </button>
+                <button class="category-btn" data-category="bogo">
+                    <i class="fas fa-gift"></i>
+                    Buy 1 Get 1
+                </button>
+                <button class="category-btn" data-category="daily">
+                    <i class="fas fa-bolt"></i>
+                    Daily Deals
+                </button>
+                <button class="category-btn" data-category="seasonal">
+                    <i class="fas fa-snowflake"></i>
+                    Seasonal Offers
+                </button>
+                <button class="category-btn" data-category="clearance">
+                    <i class="fas fa-tag"></i>
+                    Clearance Sale
+                </button>
+                <button class="category-btn" data-category="delivery">
+                    <i class="fas fa-shipping-fast"></i>
+                    Free Delivery
+                </button>
+                <button class="category-btn" data-category="new">
+                    <i class="fas fa-star"></i>
+                    New Arrivals
+                </button>
+                <button class="category-btn" data-category="flash">
+                    <i class="fas fa-hourglass-half"></i>
+                    Flash Sales
+                </button>
+            </nav>
+
+            <!-- Offers Grid -->
+            <section class="offers-grid-section">
+                <div class="section-header">
+                    <h2>Today's Hot Deals</h2>
+                    <p>Don't miss out on these limited-time offers</p>
+                </div>
+
+                <!-- All Offers -->
+                <div class="offers-grid active" id="all-offers">
+                    <div class="offer-card large discount" data-offer="discount">
+                        <div class="offer-badge">30% OFF</div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Organic Fruits">
+                        </div>
+                        <div class="offer-content">
+                            <h3>Organic Fruits Bundle</h3>
+                            <p>Fresh organic fruits including apples, bananas, and oranges</p>
+                            <div class="offer-pricing">
+                                <span class="original-price">$25.00</span>
+                                <span class="discount-price">$17.50</span>
+                            </div>
+                            <div class="offer-meta">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.8 (124)
+                                </span>
+                                <span class="time-left">
+                                    <i class="fas fa-clock"></i> 2 days left
+                                </span>
+                            </div>
+                            <button class="btn-offer" onclick="showOfferDetails('organic-fruits')">
+                                View Offer
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="offer-card bogo" data-offer="bogo">
+                        <div class="offer-badge">BUY 1 GET 1</div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Fresh Juice">
+                        </div>
+                        <div class="offer-content">
+                            <h3>Fresh Juice Combo</h3>
+                            <p>Buy one fresh orange juice, get one free</p>
+                            <div class="offer-pricing">
+                                <span class="discount-price">$4.99</span>
+                            </div>
+                            <div class="offer-meta">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.6 (89)
+                                </span>
+                            </div>
+                            <button class="btn-offer" onclick="showBOGODetails('juice-combo')">
+                                Get Offer
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="offer-card delivery" data-offer="delivery">
+                        <div class="offer-badge">FREE DELIVERY</div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Vegetables">
+                        </div>
+                        <div class="offer-content">
+                            <h3>Fresh Vegetables Pack</h3>
+                            <p>Free delivery on all vegetable orders above $15</p>
+                            <div class="offer-pricing">
+                                <span class="discount-price">From $8.99</span>
+                            </div>
+                            <button class="btn-offer" onclick="showDeliveryDetails('vegetables')">
+                                Shop Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="offer-card flash" data-offer="flash">
+                        <div class="offer-badge">FLASH SALE</div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Tomatoes">
+                        </div>
+                        <div class="offer-content">
+                            <h3>Fresh Tomatoes</h3>
+                            <p>Limited time flash sale on organic tomatoes</p>
+                            <div class="offer-pricing">
+                                <span class="original-price">$3.99</span>
+                                <span class="discount-price">$2.49</span>
+                            </div>
+                            <div class="flash-timer">
+                                <i class="fas fa-bolt"></i>
+                                <span>Ends in: 04:15:22</span>
+                            </div>
+                            <button class="btn-offer" onclick="showFlashDetails('tomatoes')">
+                                Grab Deal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="offer-card new" data-offer="new">
+                        <div class="offer-badge">NEW</div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1574856344991-aaa31b6f4ce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Exotic Fruits">
+                        </div>
+                        <div class="offer-content">
+                            <h3>Exotic Fruits Collection</h3>
+                            <p>New arrival: Dragon fruit, passion fruit, and more</p>
+                            <div class="offer-pricing">
+                                <span class="discount-price">$12.99</span>
+                            </div>
+                            <button class="btn-offer" onclick="showNewArrivalDetails('exotic-fruits')">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="offer-card clearance" data-offer="clearance">
+                        <div class="offer-badge">CLEARANCE</div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                alt="Canned Goods">
+                        </div>
+                        <div class="offer-content">
+                            <h3>Canned Goods Sale</h3>
+                            <p>Clearance sale on selected canned products</p>
+                            <div class="offer-pricing">
+                                <span class="original-price">$15.00</span>
+                                <span class="discount-price">$9.99</span>
+                            </div>
+                            <div class="stock-info">
+                                <span class="stock-low">Only 5 left!</span>
+                            </div>
+                            <button class="btn-offer" onclick="showClearanceDetails('canned-goods')">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category-specific grids will be shown when categories are clicked -->
+                <div class="offers-grid" id="discounts-offers" style="display: none;">
+                    <!-- Discount offers will be loaded here -->
+                </div>
+
+                <div class="offers-grid" id="bogo-offers" style="display: none;">
+                    <!-- BOGO offers will be loaded here -->
+                </div>
+
+                <!-- Add other category grids similarly -->
+            </section>
+
+            <!-- Mega Sale Banner -->
+            <section class="mega-sale-banner">
+                <div class="mega-sale-content">
+                    <div class="mega-sale-text">
+                        <h2>MEGA SALE</h2>
+                        <p>Up to 70% OFF on selected items</p>
+                        <div class="sale-timer">
+                            <div class="timer-unit">
+                                <span class="time">02</span>
+                                <span class="label">Days</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="time">15</span>
+                                <span class="label">Hours</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="time">45</span>
+                                <span class="label">Minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn-mega" onclick="showMegaSale()">
+                            Shop Mega Sale
+                        </button>
+                    </div>
+                    <div class="mega-sale-image">
+                        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Mega Sale">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seasonal Offers -->
+            <section class="seasonal-offers">
+                <div class="section-header">
+                    <h2>Seasonal Specials</h2>
+                    <p>Fresh deals for every season</p>
+                </div>
+                <div class="seasonal-grid">
+                    <div class="seasonal-card summer">
+                        <div class="seasonal-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3>Summer Refreshments</h3>
+                        <p>Cool drinks and fresh fruits</p>
+                        <button class="btn-seasonal" onclick="showSeasonalOffers('summer')">
+                            Explore
+                        </button>
+                    </div>
+
+                    <div class="seasonal-card winter">
+                        <div class="seasonal-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3>Winter Warmers</h3>
+                        <p>Hot beverages and comfort food</p>
+                        <button class="btn-seasonal" onclick="showSeasonalOffers('winter')">
+                            Explore
+                        </button>
+                    </div>
+
+                    <div class="seasonal-card spring">
+                        <div class="seasonal-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Spring Fresh</h3>
+                        <p>New harvest and fresh greens</p>
+                        <button class="btn-seasonal" onclick="showSeasonalOffers('spring')">
+                            Explore
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Offer Detail Modal -->
+    <div class="modal offer-modal" id="offerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Offer Details</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="notification" id="successNotification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationMessage">Offer applied successfully!</span>
+        </div>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/offers.js"></script>
+</body>
+
+</html>

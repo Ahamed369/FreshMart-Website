@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Store</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/store.css">
+    <link rel="stylesheet" href="../Styles/wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link active" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                    <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ===== ADMIN ICON ===== -->
+            <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                <i class="fas fa-user-shield"></i>
+                <div class="admin-glow"></div>
+                <div class="icon-tooltip">Admin</div>
+            </a>
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Store Header -->
+    <section class="store-header">
+        <div class="container">
+            <div class="store-header-content">
+                <h1>FreshMart Store</h1>
+                <p>Discover our wide selection of fresh groceries, from farm to your doorstep</p>
+
+                <div class="store-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Fresh Products</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <span class="stat-number">30min</span>
+                            <span class="stat-label">Fast Delivery</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Happy Students</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Controls -->
+    <section class="store-controls">
+        <div class="container">
+            <div class="controls-grid">
+                <!-- Search and Filter -->
+                <div class="control-group">
+                    <div class="search-box">
+                        <input type="text" id="storeSearch" placeholder="Search products..." class="search-input-large">
+                        <button class="search-btn-large"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="filter-controls">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="meat">Meat & Poultry</option>
+                            <option value="seafood">Seafood</option>
+                            <option value="beverages">Beverages</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="pantry">Pantry Staples</option>
+                            <option value="bakery">Bakery</option>
+                        </select>
+
+                        <select id="sortFilter" class="filter-select">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                            <option value="newest">Newest First</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+
+                        <button class="btn-filter" id="filterToggle">
+                            <i class="fas fa-sliders-h"></i>
+                            Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Filters -->
+            <div class="advanced-filters" id="advancedFilters">
+                <div class="filter-section">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <input type="range" id="priceMin" min="0" max="100" value="0" class="range-slider">
+                        <input type="range" id="priceMax" min="0" max="100" value="100" class="range-slider">
+                        <div class="price-labels">
+                            <span id="minPriceLabel">$0</span>
+                            <span id="maxPriceLabel">$100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Availability</h4>
+                    <div class="availability-filters">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="inStock" checked>
+                            <span class="checkmark"></span>
+                            In Stock Only
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newArrivals">
+                            <span class="checkmark"></span>
+                            New Arrivals
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="onSale">
+                            <span class="checkmark"></span>
+                            On Sale
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Dietary Preferences</h4>
+                    <div class="dietary-filters">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="organic">
+                            <span class="checkmark"></span>
+                            Organic
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="glutenFree">
+                            <span class="checkmark"></span>
+                            Gluten Free
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="vegan">
+                            <span class="checkmark"></span>
+                            Vegan
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="btn btn-outline" id="resetFilters">Reset Filters</button>
+                    <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="store-products">
+        <div class="container">
+            <div class="products-header">
+                <h2 id="productsCount">All Products (24)</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-container grid-view" id="productsContainer">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p>Loading products...</p>
+            </div>
+
+            <!-- No Results State -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filters to find what you're looking for.</p>
+                <button class="btn btn-primary" id="resetSearch">Reset Search</button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="page-btn prev" id="prevPageBtn">
+                    <i class="fas fa-chevron-left"></i>
+                    Previous
+                </button>
+                <div class="page-numbers" id="pageNumbers">
+                    <!-- Dynamic page numbers -->
+                </div>
+                <button class="page-btn next" id="nextPageBtn">
+                    Next
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-eye"></i> Quick View</h3>
+                <button class="modal-close" id="closeQuickView">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="quickViewContent">
+                <!-- Quick view content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/store.js"></script>
+    <script src="../Functions/wishlist.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Categories</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/ProductCategoryList.css/category.css">
+    <link rel="stylesheet" href="../Styles/category.css">
+    <link rel="stylesheet" href="../Styles/wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body> 
+    
+     
+   <!-- ===== ANIMATED NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <!-- Animated Logo -->
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <span class="logo-text">FreshMart</span>
+                <div class="logo-pulse"></div>
+            </a>
+        </div>
+        
+        <!-- Navigation Menu with Animations -->
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" class="nav-link" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="store.html" class="nav-link" data-page="store">
+                <i class="fas fa-store"></i>
+                <span>Store</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            
+            <a href="category.html" class="nav-link" data-page="categories">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="offers.html" class="nav-link" data-page="offers">
+                <i class="fas fa-tag"></i>
+                <span>Offers</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="about-us.html" class="nav-link" data-page="about">
+                <i class="fas fa-users"></i>
+                <span>About Us</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="contact-us.html" class="nav-link" data-page="contact">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <!-- Navigation Icons with Animations -->
+            <div class="nav-icons">
+        
+                
+                <!-- User Account with Hover -->
+                <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                    <i class="fas fa-user"></i>
+                    <div class="icon-tooltip">Account</div>
+                </a>
+
+                <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+                
+                <!-- Cart with Counter Animation -->
+                <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                    <div class="cart-pulse"></div>
+                    <div class="icon-tooltip">Cart</div>
+                </a>
+                
+                <!-- ===== ADMIN ICON - NEW ===== -->
+                <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="admin-glow"></div>
+                    <div class="icon-tooltip">Admin</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Animated Hamburger Menu -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <div class="hamburger-glow"></div>
+        </button>
+    </div>
+    
+    <!-- Navbar Background Effects -->
+    <div class="nav-background"></div>
+    <div class="nav-shine"></div>
+</nav>
+
+    <!-- Categories Grid - THIS IS WHERE CATEGORIES LOAD -->
+    <section class="categories-main">
+        <div class="container">
+            <div class="categories-grid" id="categoriesGrid">
+                <a href="Fruits.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Fruits</h3>
+                    <p>Fresh, organic fruits delivered daily.</p>
+                    <div class="category-actions">
+                        <a href="Fruits.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Fruits.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="Vegetables.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-carrot"></i>
+                    </div>
+                    <h3>Vegetables</h3>
+                    <p>Farm-fresh vegetables sourced from local organic farms.</p>
+                    <div class="category-actions">
+                        <a href="Vegetables.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Vegetables.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="Diary.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cheese"></i>
+                    </div>
+                    <h3>Dairy</h3>
+                    <p>Premium dairy products including milk, cheese, and yogurt.</p>
+                    <div class="category-actions">
+                        <a href="Diary.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Diary.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="Meat.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <h3>Meat & Poultry</h3>
+                    <p>High-quality cuts, responsibly sourced for freshness.</p>
+                    <div class="category-actions">
+                        <a href="Meat.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Meat.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="Beverages.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>Beverages</h3>
+                    <p>Drinks, juices and refreshments to quench your thirst.</p>
+                    <div class="category-actions">
+                        <a href="Beverages.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Beverages.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="Snacks.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <h3>Snacks</h3>
+                    <p>Sweet and savory snacks for every craving.</p>
+                    <div class="category-actions">
+                        <a href="Snacks.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Snacks.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="PantryStaples.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Pantry Staples</h3>
+                    <p>Essentials and basics to stock your kitchen.</p>
+                    <div class="category-actions">
+                        <a href="PantryStaples.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="PantryStaples.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+                <a href="Bakery.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3>Bakery</h3>
+                    <p>Freshly baked bread, pastries and sweet treats.</p>
+                    <div class="category-actions">
+                        <a href="Bakery.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i>&nbsp;Shop Now</a>
+                        <a href="Bakery.html" class="btn btn-primary view-all"><i class="fas fa-eye"></i>&nbsp;View All</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Shop Categories -->
+    <section class="why-categories">
+        <div class="container">
+            <h2 class="section-title">Why Shop Our Categories?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive pricing with regular deals and exclusive student discounts on all categories.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>Flexible Weight</h3>
+                    <p>Choose from preset weights or enter custom quantities for fresh produce and items.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>30-minute delivery guarantee with real-time tracking for all your grocery orders.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Fresh Quality</h3>
+                    <p>100% fresh guarantee on all products. Sourced directly from trusted local farms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Deals -->
+    <section class="category-deals">
+        <div class="container">
+            <h2 class="section-title">Category Specials</h2>
+            <div class="deals-grid">
+                <div class="deal-card large">
+                    <div class="deal-content">
+                        <h3>Fresh Fruit Bonanza</h3>
+                        <p>Get 25% off on all fresh fruits. Limited time offer!</p>
+                        <div class="deal-timer">
+                            <div class="timer-item">
+                                <span class="timer-number">02</span>
+                                <span class="timer-label">Days</span>
+                            </div>
+                            <div class="timer-item">
+                                <span class="timer-number">12</span>
+                                <span class="timer-label">Hrs</span>
+                            </div>
+                            <div class="timer-item">
+                                <span class="timer-number">45</span>
+                                <span class="timer-label">Min</span>
+                            </div>
+                        </div>
+                        <a href="Fruits.html" class="btn btn-primary">Shop Fruits</a>
+                    </div>
+                    <div class="deal-image">
+                        <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Fresh Fruits">
+                    </div>
+                </div>
+
+                <div class="deals-side">
+                    <div class="deal-card small">
+                        <div class="deal-badge">Buy 2 Get 1</div>
+                        <h4>Dairy Delight</h4>
+                        <p>Buy 2 get 1 free on all dairy products</p>
+                        <a href="Diary.html" class="btn btn-outline">Shop Dairy</a>
+                    </div>
+                    <div class="deal-card small">
+                        <div class="deal-badge">20% OFF</div>
+                        <h4>Meat Special</h4>
+                        <p>20% off on premium meat & poultry</p>
+                        <a href="Meat.html" class="btn btn-outline">Shop Meat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Never Miss a Category Deal!</h2>
+                <p>Subscribe to get exclusive category discounts and new arrival notifications</p>
+                <form class="newsletter-form" id="categoryNewsletter">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-note">Get 15% off your first category order when you subscribe!</p>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- IMPORTANT: Load JavaScript at the end -->
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/ProductCategoryList.js/category.js"></script>
+    <script src="../Functions/category.js"></script>
+     <script src="../Functions/wishlist.js"></script>
+</body>
+
+</html>

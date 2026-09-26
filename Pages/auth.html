@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Authentication</title>
+    <link rel="stylesheet" href="../Styles/auth.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+            
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                   
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+                    
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+        
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title animate-fadeIn">Account Management</h1>
+            
+            <!-- Authentication Grid -->
+            <div class="auth-grid-container">
+                <!-- Login Card -->
+                <div class="auth-card animate-slideInLeft">
+                    <div class="auth-icon login-icon">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </div>
+                    <div class="auth-card-header">
+                        <h2>Login</h2>
+                        <p>Connect with your friends today!</p>
+                    </div>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail" class="form-label">Enter Your Email</label>
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
+                            <div class="error-message" id="loginEmailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword" class="form-label">Enter Your Password</label>
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                            <div class="error-message" id="loginPasswordError"></div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-login">
+                            <span class="btn-text">Sign In</span>
+                            <div class="loading"></div>
+                        </button>
+                    </form>
+                    
+                    <div class="auth-divider">
+                        <span>Or With</span>
+                    </div>
+                    
+                    <div class="social-auth">
+                        <button class="btn-social btn-facebook">
+                            <i class="fab fa-facebook"></i>
+                            Signup with Facebook
+                        </button>
+                        <button class="btn-social btn-google">
+                            <i class="fab fa-google"></i>
+                            Signup with Google
+                        </button>
+                    </div>
+                    
+                    <div class="auth-switch">
+                        <p>Already have an account? <a href="#" id="showSignup">Login</a></p>
+                    </div>
+                </div>
+                
+                <!-- Signup Card -->
+                <div class="auth-card animate-slideInRight">
+                    <div class="auth-icon signup-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="auth-card-header">
+                        <h2>Sign Up</h2>
+                        <p>Create your FreshMart account</p>
+                    </div>
+                    
+                    <form id="signupForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Enter first name" required>
+                                <div class="error-message" id="firstNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Enter last name" required>
+                                <div class="error-message" id="lastNameError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signupEmail" class="form-label">Enter your email</label>
+                            <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email" required>
+                            <div class="error-message" id="signupEmailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter phone number" required>
+                            <div class="error-message" id="phoneError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" id="signupPassword" class="form-control" placeholder="Create a strong password" required>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" id="passwordStrength"></div>
+                                </div>
+                                <span class="strength-text" id="passwordStrengthText">Weak</span>
+                            </div>
+                            <div class="error-message" id="signupPasswordError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                            <div class="error-message" id="confirmPasswordError"></div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="terms.html">Terms & Conditions</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-signup">
+                            <span class="btn-text">Create Account</span>
+                            <div class="loading"></div>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- My Account Card -->
+                <div class="auth-card animate-slideInLeft">
+                    <div class="auth-icon account-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="auth-card-header">
+                        <h2>My Account</h2>
+                        <p>Manage your profile and preferences</p>
+                    </div>
+                    
+                    <div class="account-info">
+                        <div class="user-avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 id="accountName">John Doe</h3>
+                        <p id="accountEmail">john.doe@example.com</p>
+                        
+                        <div class="account-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="accountOrders">12</span>
+                                <span class="stat-label">Orders</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="accountPoints">450</span>
+                                <span class="stat-label">Points</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="accountSince">2023</span>
+                                <span class="stat-label">Member Since</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-actions">
+                        <button class="btn btn-account" id="editProfileBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </button>
+                        <button class="btn btn-secondary" id="orderHistoryBtn">
+                            <i class="fas fa-history"></i>
+                            Order History
+                        </button>
+                        <button class="btn btn-danger" id="accountLogoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reset Password</h2>
+                <button class="modal-close" id="closeForgotPasswordModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your email address and we'll send you a link to reset your password.</p>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="resetEmail" class="form-label">Email Address</label>
+                        <input type="email" id="resetEmail" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="editProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button class="modal-close" id="closeEditProfileModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editFirstName" class="form-label">First Name</label>
+                            <input type="text" id="editFirstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editLastName" class="form-label">Last Name</label>
+                            <input type="text" id="editLastName" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPhone" class="form-label">Phone Number</label>
+                        <input type="tel" id="editPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAvatar" class="form-label">Profile Picture</label>
+                        <input type="file" id="editAvatar" class="form-control" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+     
+    
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Functions/auth.js"></script>
+</body>
+</html>

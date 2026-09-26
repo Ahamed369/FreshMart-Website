@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - My Wishlist</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+            
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+                    
+                    <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+                    
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+        
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Wishlist Header -->
+    <section class="wishlist-header">
+        <div class="container">
+            <div class="wishlist-header-content">
+                <div class="wishlist-icon-large">
+                    <i class="fas fa-heart"></i>
+                    <div class="heart-pulse"></div>
+                </div>
+                <h1>My Wishlist</h1>
+                <p>Save your favorite items for later and never miss out on what you love</p>
+                
+                <div class="wishlist-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <span class="stat-number" id="totalWishlistItems">0</span>
+                            <span class="stat-label">Saved Items</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tag"></i>
+                        <div>
+                            <span class="stat-number" id="itemsOnSale">0</span>
+                            <span class="stat-label">On Sale</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <span class="stat-number" id="inStockItems">0</span>
+                            <span class="stat-label">In Stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishlist Content -->
+    <section class="wishlist-content">
+        <div class="container">
+            <div class="wishlist-layout">
+                <!-- Wishlist Items -->
+                <div class="wishlist-items-section">
+                    <div class="section-header">
+                        <h2>Saved Items</h2>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span class="items-count" id="itemsCount">0 items</span>
+                            <button class="btn btn-outline" onclick="clearWishlist()" style="padding: 8px 16px; font-size: 0.9rem;" title="Clear all wishlist items">
+                                <i class="fas fa-trash-alt"></i> Clear All
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Options -->
+                    <div class="wishlist-filters">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-th"></i> All Items
+                        </button>
+                        <button class="filter-btn" data-filter="sale">
+                            <i class="fas fa-tag"></i> On Sale
+                        </button>
+                        <button class="filter-btn" data-filter="stock">
+                            <i class="fas fa-check-circle"></i> In Stock
+                        </button>
+                        <button class="filter-btn" data-filter="outofstock">
+                            <i class="fas fa-times-circle"></i> Out of Stock
+                        </button>
+                    </div>
+
+                    <div class="wishlist-items" id="wishlistItems">
+                        <!-- Wishlist items will be loaded dynamically -->
+                    </div>
+
+                    <!-- Empty Wishlist State -->
+                    <div class="empty-wishlist" id="emptyWishlist">
+                        <div class="empty-wishlist-content">
+                            <div class="empty-icon">
+                                <i class="fas fa-heart-broken"></i>
+                            </div>
+                            <h3>Your wishlist is empty</h3>
+                            <p>Start adding your favorite products to save them for later!</p>
+                            <a href="store.html" class="btn btn-primary">
+                                <i class="fas fa-shopping-bag"></i>
+                                Browse Products
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Actions -->
+                    <div class="wishlist-actions">
+                        <a href="store.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i>
+                            Continue Shopping
+                        </a>
+                        <button class="btn btn-primary" id="addAllToCart" disabled>
+                            <i class="fas fa-shopping-cart"></i>
+                            Add All to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Wishlist Summary -->
+                <div class="wishlist-summary-section">
+                    <div class="wishlist-summary">
+                        <h3>Wishlist Summary</h3>
+                        
+                        <!-- Total Value -->
+                        <div class="value-card">
+                            <div class="value-header">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Total Value</span>
+                            </div>
+                            <div class="value-amount" id="totalValue">$0.00</div>
+                            <div class="value-savings" id="totalSavings">
+                                Potential savings: $0.00
+                            </div>
+                        </div>
+                        
+                        <!-- Category Breakdown -->
+                        <div class="category-breakdown">
+                            <h4>Categories</h4>
+                            <div id="categoryList">
+                                <!-- Categories will be populated -->
+                            </div>
+                        </div>
+
+                        <!-- Price Alert -->
+                        <div class="price-alert">
+                            <div class="alert-header">
+                                <i class="fas fa-bell"></i>
+                                <h4>Price Drop Alert</h4>
+                            </div>
+                            <p>Get notified when items go on sale</p>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="priceAlertToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="quick-actions">
+                            <h4>Quick Actions</h4>
+                            <button class="action-btn" onclick="shareWishlist()">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Wishlist</span>
+                            </button>
+                            <button class="action-btn" onclick="printWishlist()">
+                                <i class="fas fa-print"></i>
+                                <span>Print List</span>
+                            </button>
+                            <button class="action-btn" onclick="exportWishlist()">
+                                <i class="fas fa-download"></i>
+                                <span>Export as PDF</span>
+                            </button>
+                        </div>
+
+                        <!-- Tips -->
+                        <div class="wishlist-tips">
+                            <h4><i class="fas fa-lightbulb"></i> Tips</h4>
+                            <ul>
+                                <li>Check back regularly for price drops</li>
+                                <li>Items in your wishlist don't expire</li>
+                                <li>Share your list with friends and family</li>
+                                <li>Enable alerts for special offers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="recommended-products">
+        <div class="container">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="products-grid" id="recommendedProducts">
+                <!-- Recommended products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/wishlist.js"></script>
+</body>
+</html>

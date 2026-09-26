@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Shopping Cart</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+            
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+                
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                
+                    
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+                    
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+        
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="cart-header">
+        <div class="container">
+            <div class="cart-header-content">
+                <h1>Shopping Cart</h1>
+                <div class="cart-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <span>Shopping Cart</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span>Checkout</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Order Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-content">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="section-header">
+    <h2>Your Cart Items</h2>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+        <span class="items-count" id="itemsCount">0 items</span>
+        <button class="btn btn-outline" onclick="clearCart()" style="padding: 8px 16px; font-size: 0.9rem;">
+            <i class="fas fa-trash-alt"></i> Clear Cart
+        </button>
+    </div>
+</div>
+
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be loaded dynamically -->
+                </div>
+
+            
+
+                    <!-- Empty Cart State -->
+                    <div class="empty-cart" id="emptyCart">
+                        <div class="empty-cart-content">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Looks like you haven't added any items to your cart yet.</p>
+                            <a href="store.html" class="btn btn-primary">Start Shopping</a>
+                        </div>
+                    </div>
+
+                    <!-- Cart Actions -->
+                    <div class="cart-actions">
+                        <a href="store.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i>
+                            Continue Shopping
+                        </a>
+                        <button class="btn btn-primary" id="proceedToCheckout" disabled>
+                            Proceed to Checkout
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-section">
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        
+                        <!-- Free Delivery Progress -->
+                        <div class="free-delivery-progress">
+                            <div class="progress-text">
+                                Add <strong>$50.00</strong> more for FREE delivery!
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="subtotalAmount">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Fee</span>
+                                <span id="deliveryFee">$7.99</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax</span>
+                                <span id="taxAmount">$0.00</span>
+                            </div>
+                            <div class="summary-row discount" style="display: none;">
+                                <span>Discount</span>
+                                <span id="discountAmount">-$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="totalAmount">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Promo Code -->
+                        <div class="promo-section">
+                            <div class="promo-header">
+                                <h4>Promo Code</h4>
+                                <button type="button" class="promo-toggle" id="promoToggle">
+                                    <i class="fas fa-tag"></i>
+                                </button>
+                            </div>
+                            <div class="promo-form" id="promoForm">
+                                <input type="text" id="promoCode" placeholder="Enter promo code">
+                                <button class="btn btn-outline" id="applyPromo">Apply</button>
+                            </div>
+                            <div class="promo-suggestions">
+                                <span>Try these codes:</span>
+                                <div class="promo-tags">
+                                    <span class="promo-tag" data-code="FRESH15">FRESH15</span>
+                                    <span class="promo-tag" data-code="STUDENT20">STUDENT20</span>
+                                    <span class="promo-tag" data-code="SAVE10">SAVE10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Guarantee -->
+                        <div class="delivery-guarantee">
+                            <div class="delivery-item">
+                                <i class="fas fa-bolt"></i>
+                                <div>
+                                    <strong>30-minute delivery</strong>
+                                    <p>Fresh guarantee</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Info -->
+                        <div class="delivery-info">
+                            <div class="delivery-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div>
+                                    <strong>Fast Delivery</strong>
+                                    <p>Get your order in 30 minutes or less</p>
+                                </div>
+                            </div>
+                            <div class="delivery-item">
+                                <i class="fas fa-undo"></i>
+                                <div>
+                                    <strong>Easy Returns</strong>
+                                    <p>7-day return policy for all items</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Badge -->
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure checkout with 256-bit SSL encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed">
+        <div class="container">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="products-grid" id="recentlyViewed">
+                <!-- Recently viewed products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <button class="modal-close" onclick="closeCheckoutModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-steps">
+                    <div class="checkout-step active" id="step1">
+                        <!-- Delivery Information -->
+                        <h3>Delivery Information</h3>
+                        <form class="checkout-form" id="deliveryForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" id="firstName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" id="lastName" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address" class="form-label">Delivery Address *</label>
+                                <textarea id="address" class="form-control" rows="3" required placeholder="Enter your complete delivery address"></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city" class="form-label">City *</label>
+                                    <input type="text" id="city" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode" class="form-label">ZIP Code *</label>
+                                    <input type="text" id="zipCode" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="saveAddress">
+                                    <span class="checkmark"></span>
+                                    Save this address for future orders
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" onclick="closeCheckoutModal()">Cancel</button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue to Payment</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="checkout-step" id="step2">
+                        <!-- Payment Information -->
+                        <h3>Payment Method</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <div class="method-header">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                </div>
+                                <div class="method-content">
+                                    <form class="payment-form" id="cardForm">
+                                        <div class="form-group">
+                                            <label for="cardNumber" class="form-label">Card Number *</label>
+                                            <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiryDate" class="form-label">Expiry Date *</label>
+                                                <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cvv" class="form-label">CVV *</label>
+                                                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardName" class="form-label">Name on Card *</label>
+                                            <input type="text" id="cardName" class="form-control" required>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="payment-method" data-method="paypal">
+                                <div class="method-header">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </div>
+                                <div class="method-content">
+                                    <p>You will be redirected to PayPal to complete your payment securely.</p>
+                                </div>
+                            </div>
+
+                            <div class="payment-method" data-method="cod">
+                                <div class="method-header">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>Cash on Delivery</span>
+                                </div>
+                                <div class="method-content">
+                                    <p>Pay with cash when your order is delivered.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="prevStep(1)">Back</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Review Order</button>
+                        </div>
+                    </div>
+
+                    <div class="checkout-step" id="step3">
+                        <!-- Order Review -->
+                        <h3>Review Your Order</h3>
+                        <div class="order-review">
+                            <div class="review-section">
+                                <h4>Delivery Information</h4>
+                                <div class="review-info" id="deliveryReview">
+                                    <!-- Delivery info will be populated here -->
+                                </div>
+                                <button class="btn-edit" onclick="editStep(1)">Edit</button>
+                            </div>
+
+                            <div class="review-section">
+                                <h4>Payment Method</h4>
+                                <div class="review-info" id="paymentReview">
+                                    <!-- Payment info will be populated here -->
+                                </div>
+                                <button class="btn-edit" onclick="editStep(2)">Edit</button>
+                            </div>
+
+                            <div class="review-section">
+                                <h4>Order Items</h4>
+                                <div class="review-items" id="orderItemsReview">
+                                    <!-- Order items will be populated here -->
+                                </div>
+                            </div>
+
+                            <div class="review-total">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="reviewSubtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery</span>
+                                    <span id="reviewDelivery">$7.99</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Tax</span>
+                                    <span id="reviewTax">$0.00</span>
+                                </div>
+                                <div class="summary-row discount" style="display: none;">
+                                    <span>Discount</span>
+                                    <span id="reviewDiscount">-$0.00</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span id="reviewTotal">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="prevStep(2)">Back</button>
+                            <button type="button" class="btn btn-primary" id="placeOrderBtn" onclick="placeOrder()">
+                                <i class="fas fa-lock"></i>
+                                Place Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="orderSuccessModal">
+        <div class="modal-content success-modal">
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Order Successful!</h2>
+                    <p>Thank you for your order. Your order has been confirmed and will be delivered soon.</p>
+                    <div class="order-details">
+                        <div class="order-info">
+                            <strong>Order ID:</strong>
+                            <span id="successOrderId">#12345</span>
+                        </div>
+                        <div class="order-info">
+                            <strong>Estimated Delivery:</strong>
+                            <span>30 minutes</span>
+                        </div>
+                        <div class="order-info">
+                            <strong>Total Amount:</strong>
+                            <span id="successTotalAmount">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="success-actions">
+                        <button class="btn btn-outline" onclick="closeSuccessModal()">Continue Shopping</button>
+                        <a href="order.html" class="btn btn-primary">View Order Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/cart.js"></script>
+</body>
+</html>

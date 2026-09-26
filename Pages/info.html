@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information & Support - FreshMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Styles/info.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+</head>
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                    <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+
+                    <!-- ===== ADMIN ICON - NEW ===== -->
+                    <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                        <i class="fas fa-user-shield"></i>
+                        <div class="admin-glow"></div>
+                        <div class="icon-tooltip">Admin</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>FreshMart Support Center</h1>
+            <p>Everything you need to know about shopping with FreshMart</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for help...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+        <div class="quick-link-card" data-section="faq">
+            <div class="card-icon">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h3>FAQ</h3>
+            <p>Find answers quickly</p>
+            <div class="card-hover">
+                <span>Get Help</span>
+            </div>
+        </div>
+        <div class="quick-link-card" data-section="return">
+            <div class="card-icon">
+                <i class="fas fa-undo"></i>
+            </div>
+            <h3>Return Policy</h3>
+            <p>Easy returns within 7 days</p>
+            <div class="card-hover">
+                <span>Learn More</span>
+            </div>
+        </div>
+        <div class="quick-link-card" data-section="terms">
+            <div class="card-icon">
+                <i class="fas fa-file-contract"></i>
+            </div>
+            <h3>Terms & Conditions</h3>
+            <p>Read our terms of service</p>
+            <div class="card-hover">
+                <span>Read Terms</span>
+            </div>
+        </div>
+        <div class="quick-link-card" data-section="privacy">
+            <div class="card-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Privacy Policy</h3>
+            <p>How we protect your data</p>
+            <div class="card-hover">
+                <span>View Policy</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq-section" class="content-section active">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about FreshMart grocery delivery</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-category">
+                <h3><i class="fas fa-shipping-fast"></i> Delivery & Shipping</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What are your delivery areas and times?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We deliver across Colombo, Kandy, and Gampaha districts. Delivery slots are available from 8 AM to 10 PM daily. Same-day delivery is available for orders placed before 2 PM.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is the minimum order for free delivery?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Free delivery is available for all orders above LKR 3,000. For orders below this amount, a delivery fee of LKR 250 applies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I schedule delivery for a specific time?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! During checkout, you can select your preferred 2-hour delivery window. We'll send SMS updates about your delivery status.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-shopping-bag"></i> Products & Quality</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How fresh are your fruits and vegetables?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We source directly from local farms and suppliers daily. Our cold chain logistics ensure freshness from farm to your doorstep. All produce is quality checked before dispatch.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you offer organic products?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We have a dedicated organic section with certified organic fruits, vegetables, and pantry items. Look for the green "Organic" badge on product pages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What if I receive damaged or expired products?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Contact us immediately through the app or call center. We'll arrange a replacement or refund within 24 hours. Please keep the original packaging for verification.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h3><i class="fas fa-credit-card"></i> Payments & Accounts</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What payment methods do you accept?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept cash on delivery, credit/debit cards, bank transfers, and mobile wallets (Genie, FriMi, mCash). All online payments are secured with SSL encryption.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I modify or cancel my order?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can modify or cancel orders within 1 hour of placement. After this, orders enter processing. Contact our customer service for urgent changes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I create a FreshMart account?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Download our app or visit our website. Click "Sign Up" and provide your mobile number. We'll send a verification code to complete registration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Return Policy Section -->
+    <section id="return-section" class="content-section">
+        <div class="section-header">
+            <h2>Freshness Guarantee & Return Policy</h2>
+            <p>Your satisfaction with our products is our priority</p>
+        </div>
+
+        <div class="policy-content">
+            <div class="policy-highlight">
+                <div class="highlight-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>7-Day Return Window</h4>
+                    <p>Return non-perishable items within 7 days of delivery</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Freshness Guarantee</h4>
+                    <p>Not satisfied with freshness? Get instant replacement</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>Free Pickup</h4>
+                    <p>We pick up returns at no extra cost</p>
+                </div>
+            </div>
+
+            <div class="policy-details">
+                <div class="policy-section">
+                    <h3><i class="fas fa-check-circle"></i> Eligible for Return</h3>
+                    <ul>
+                        <li>Non-perishable grocery items in original packaging</li>
+                        <li>Damaged or defective products</li>
+                        <li>Wrong items delivered</li>
+                        <li>Products with quality issues</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h3><i class="fas fa-times-circle"></i> Not Eligible for Return</h3>
+                    <ul>
+                        <li>Perishable items (fruits, vegetables, dairy, meat)</li>
+                        <li>Opened personal care products</li>
+                        <li>Items without original packaging</li>
+                        <li>Products purchased during clearance sales</li>
+                    </ul>
+                </div>
+
+                <div class="return-process">
+                    <h3>Easy Return Process</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Report Issue</h4>
+                            <p>Contact us within 24 hours of delivery via app, website, or phone</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Get Approval</h4>
+                            <p>We'll verify and approve your return request</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Schedule Pickup</h4>
+                            <p>Choose a convenient time for return pickup</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h4>Receive Refund</h4>
+                            <p>Get refund within 3-5 business days after verification</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="refund-info">
+                    <h3>Refund Methods</h3>
+                    <div class="refund-options">
+                        <div class="refund-option">
+                            <i class="fas fa-wallet"></i>
+                            <span>Wallet Credit</span>
+                            <small>Instant refund to FreshMart wallet</small>
+                        </div>
+                        <div class="refund-option">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Wallet</span>
+                            <small>Refund to your mobile wallet</small>
+                        </div>
+                        <div class="refund-option">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Bank Transfer</span>
+                            <small>Transfer to your bank account</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions Section -->
+    <section id="terms-section" class="content-section">
+        <div class="section-header">
+            <h2>Terms & Conditions</h2>
+            <p>Please read these terms carefully before using FreshMart services</p>
+        </div>
+
+        <div class="policy-content">
+            <div class="terms-nav">
+                <button class="terms-nav-btn active" data-tab="account">Account Terms</button>
+                <button class="terms-nav-btn" data-tab="ordering">Ordering</button>
+                <button class="terms-nav-btn" data-tab="delivery">Delivery</button>
+                <button class="terms-nav-btn" data-tab="payments">Payments</button>
+            </div>
+
+            <div class="terms-content">
+                <div class="terms-tab active" id="account-tab">
+                    <h3>Account Registration</h3>
+                    <p>To use FreshMart services, you must register an account with accurate and complete information. You are responsible for maintaining the confidentiality of your account credentials.</p>
+                    
+                    <h3>Age Requirement</h3>
+                    <p>You must be at least 18 years old to create an account and place orders. Users under 18 must have parental consent and supervision.</p>
+                    
+                    <h3>Account Security</h3>
+                    <p>Notify us immediately of any unauthorized access to your account. We reserve the right to suspend accounts showing suspicious activity.</p>
+                </div>
+
+                <div class="terms-tab" id="ordering-tab">
+                    <h3>Order Placement</h3>
+                    <p>All orders are subject to product availability. We reserve the right to limit quantities and refuse service at our discretion.</p>
+                    
+                    <h3>Pricing</h3>
+                    <p>Prices are subject to change without notice. While we strive for accuracy, pricing errors may occur. We reserve the right to cancel orders containing pricing errors.</p>
+                    
+                    <h3>Product Substitutions</h3>
+                    <p>If a selected item is unavailable, we may substitute with a similar product of equal or greater value. You can refuse substitutions upon delivery.</p>
+                </div>
+
+                <div class="terms-tab" id="delivery-tab">
+                    <h3>Delivery Windows</h3>
+                    <p>We deliver within selected time slots. While we strive for punctuality, delivery times are estimates and not guaranteed.</p>
+                    
+                    <h3>Failed Deliveries</h3>
+                    <p>If delivery fails due to incorrect address or recipient unavailability, additional delivery charges may apply for rescheduling.</p>
+                    
+                    <h3>Delivery Acceptance</h3>
+                    <p>Please inspect items upon delivery. Report any issues immediately to our delivery personnel or customer service.</p>
+                </div>
+
+                <div class="terms-tab" id="payments-tab">
+                    <h3>Payment Methods</h3>
+                    <p>We accept various payment methods as listed on our website. All transactions are processed through secure payment gateways.</p>
+                    
+                    <h3>Payment Security</h3>
+                    <p>Your payment information is encrypted and secure. We do not store complete credit card details on our servers.</p>
+                    
+                    <h3>Refunds</h3>
+                    <p>Refunds are processed according to our Return Policy. Processing times may vary depending on your payment method.</p>
+                </div>
+            </div>
+
+            <div class="terms-agreement">
+                <div class="agreement-box">
+                    <input type="checkbox" id="termsAgreement">
+                    <label for="termsAgreement">I have read and agree to the FreshMart Terms & Conditions</label>
+                </div>
+                <button class="agree-btn" disabled>Continue Shopping</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy-section" class="content-section">
+        <div class="section-header">
+            <h2>Privacy Policy</h2>
+            <p>How we collect, use, and protect your personal information</p>
+        </div>
+
+        <div class="policy-content">
+            <div class="privacy-overview">
+                <div class="privacy-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Data Protection</h4>
+                    <p>Your data is encrypted and stored securely</p>
+                </div>
+                <div class="privacy-card">
+                    <i class="fas fa-eye-slash"></i>
+                    <h4>No Data Selling</h4>
+                    <p>We never sell your personal information</p>
+                </div>
+                <div class="privacy-card">
+                    <i class="fas fa-cookie"></i>
+                    <h4>Cookie Control</h4>
+                    <p>You control which cookies we use</p>
+                </div>
+            </div>
+
+            <div class="privacy-details">
+                <div class="data-usage">
+                    <h3>How We Use Your Information</h3>
+                    <div class="usage-grid">
+                        <div class="usage-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h5>Order Processing</h5>
+                            <p>To process and deliver your grocery orders</p>
+                        </div>
+                        <div class="usage-item">
+                            <i class="fas fa-bell"></i>
+                            <h5>Notifications</h5>
+                            <p>To send order updates and promotions</p>
+                        </div>
+                        <div class="usage-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h5>Service Improvement</h5>
+                            <p>To enhance your shopping experience</p>
+                        </div>
+                        <div class="usage-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h5>Security</h5>
+                            <p>To protect against fraud and abuse</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-collection">
+                    <h3>Information We Collect</h3>
+                    <div class="collection-types">
+                        <div class="collection-type">
+                            <h4>Personal Information</h4>
+                            <ul>
+                                <li>Name and contact details</li>
+                                <li>Delivery addresses</li>
+                                <li>Payment information</li>
+                                <li>Account preferences</li>
+                            </ul>
+                        </div>
+                        <div class="collection-type">
+                            <h4>Usage Information</h4>
+                            <ul>
+                                <li>Browsing history</li>
+                                <li>Order history</li>
+                                <li>Device information</li>
+                                <li>Location data (with consent)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-rights">
+                    <h3>Your Privacy Rights</h3>
+                    <div class="rights-grid">
+                        <div class="right-item">
+                            <i class="fas fa-download"></i>
+                            <h5>Access Data</h5>
+                            <p>Request a copy of your personal data</p>
+                            <button class="right-btn">Request Access</button>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-edit"></i>
+                            <h5>Update Information</h5>
+                            <p>Correct inaccurate personal information</p>
+                            <button class="right-btn">Update Info</button>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-trash-alt"></i>
+                            <h5>Delete Account</h5>
+                            <p>Request deletion of your account and data</p>
+                            <button class="right-btn">Delete Account</button>
+                        </div>
+                        <div class="right-item">
+                            <i class="fas fa-ban"></i>
+                            <h5>Opt-Out</h5>
+                            <p>Unsubscribe from marketing communications</p>
+                            <button class="right-btn">Manage Preferences</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cookie-settings">
+                    <h3>Cookie Preferences</h3>
+                    <div class="cookie-controls">
+                        <div class="cookie-option">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span>Essential Cookies</span>
+                            <small>Required for website functionality</small>
+                        </div>
+                        <div class="cookie-option">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span>Analytics Cookies</span>
+                            <small>Help us improve our services</small>
+                        </div>
+                        <div class="cookie-option">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                            <span>Marketing Cookies</span>
+                            <small>Personalize ads and offers</small>
+                        </div>
+                    </div>
+                    <button class="save-preferences">Save Preferences</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="content-section">
+        <div class="section-header">
+            <h2>Contact FreshMart</h2>
+            <p>We're here to help with your grocery needs</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+94 11 234 5678</p>
+                        <small>Available 7 AM - 11 PM</small>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>support@freshmart.lk</p>
+                        <small>Response within 2 hours</small>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-comment-dots"></i>
+                    <div>
+                        <h4>Live Chat</h4>
+                        <p>Available in app</p>
+                        <small>24/7 automated support</small>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Visit Us</h4>
+                        <p>123 Galle Road, Colombo 03</p>
+                        <small>Head Office</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select an issue</option>
+                            <option value="delivery">Delivery Issue</option>
+                            <option value="product">Product Quality</option>
+                            <option value="payment">Payment Problem</option>
+                            <option value="account">Account Help</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderId">Order ID (if applicable)</label>
+                        <input type="text" id="orderId" name="orderId">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Describe your issue in detail..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/info.js"></script>
+</body>
+</html>

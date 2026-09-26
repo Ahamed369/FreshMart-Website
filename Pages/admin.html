@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Styles/admin.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/wishlist.css">
+</head>
+
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                    <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+
+                    <!-- ===== ADMIN ICON - NEW ===== -->
+                    <a href="admin.html" class="nav-icon admin-icon active" aria-label="Admin Dashboard">
+                        <i class="fas fa-user-shield"></i>
+                        <div class="admin-glow"></div>
+                        <div class="icon-tooltip">Admin</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Admin Dashboard Controls -->
+    <div class="admin-controls">
+        <div class="admin-nav">
+            <button class="admin-nav-btn active" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </button>
+            <button class="admin-nav-btn" data-section="products">
+                <i class="fas fa-box"></i>
+                <span>Products</span>
+            </button>
+            <button class="admin-nav-btn" data-section="users">
+                <i class="fas fa-users"></i>
+                <span>Users</span>
+            </button>
+            <button class="admin-nav-btn" data-section="orders">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Orders</span>
+            </button>
+            <button class="admin-nav-btn" data-section="reports">
+                <i class="fas fa-chart-bar"></i>
+                <span>Reports</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="content-section active">
+            <div class="section-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h1>
+                <p>Welcome to FreshMart Admin Panel</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card" onclick="showSection('reports')">
+                    <div class="stat-icon revenue">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="stat-pulse"></div>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalRevenue">$12,458</h3>
+                        <p>Total Revenue</p>
+                        <span class="stat-change positive">+12%</span>
+                    </div>
+                    <div class="stat-wave"></div>
+                </div>
+                <div class="stat-card" onclick="showSection('orders')">
+                    <div class="stat-icon orders">
+                        <i class="fas fa-shopping-bag"></i>
+                        <div class="stat-pulse"></div>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalOrders">1,248</h3>
+                        <p>Total Orders</p>
+                        <span class="stat-change positive">+8%</span>
+                    </div>
+                    <div class="stat-wave"></div>
+                </div>
+                <div class="stat-card" onclick="showSection('users')">
+                    <div class="stat-icon users">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-pulse"></div>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalUsers">5,678</h3>
+                        <p>Total Users</p>
+                        <span class="stat-change positive">+15%</span>
+                    </div>
+                    <div class="stat-wave"></div>
+                </div>
+                <div class="stat-card" onclick="showSection('products')">
+                    <div class="stat-icon products">
+                        <i class="fas fa-box"></i>
+                        <div class="stat-pulse"></div>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalProducts">342</h3>
+                        <p>Total Products</p>
+                        <span class="stat-change negative">-3%</span>
+                    </div>
+                    <div class="stat-wave"></div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="actions-grid">
+                    <div class="action-card" onclick="openAddProductModal()">
+                        <div class="action-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>Add Product</h3>
+                        <p>Add new product to store</p>
+                        <div class="action-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="action-card" onclick="openAddUserModal()">
+                        <div class="action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Add User</h3>
+                        <p>Create new user account</p>
+                        <div class="action-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="action-card" onclick="showSection('orders'); showOrderAction('manage');">
+                        <div class="action-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Process Orders</h3>
+                        <p>Manage pending orders</p>
+                        <div class="action-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="action-card" onclick="showSection('reports'); showReportAction('sales');">
+                        <div class="action-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>View Reports</h3>
+                        <p>Analytics and insights</p>
+                        <div class="action-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                <div class="activity-list" id="activityList">
+                    <!-- Activities will be loaded here -->
+                </div>
+                <div class="activity-footer">
+                    <button class="btn btn-outline" onclick="clearRecentActivity()">
+                        <i class="fas fa-trash"></i>
+                        Clear All
+                    </button>
+                    <button class="btn btn-outline" onclick="exportActivity()">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products-section" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-box"></i> Product Management</h1>
+                <p>Manage your product inventory and listings</p>
+                <button class="btn btn-primary" onclick="showProductAction('add')">
+                    <i class="fas fa-plus"></i>
+                    Product
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="management-grid">
+                <div class="management-card" onclick="showProductAction('add')">
+                    <div class="card-icon">
+                        <i class="fas fa-plus-circle"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Add Product</h3>
+                    <p>Create new product listings</p>
+                    <div class="card-hover">
+                        <span>Add New</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showProductAction('edit')">
+                    <div class="card-icon">
+                        <i class="fas fa-edit"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Edit Product</h3>
+                    <p>Modify existing products</p>
+                    <div class="card-hover">
+                        <span>Edit Items</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showProductAction('delete')">
+                    <div class="card-icon">
+                        <i class="fas fa-trash"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Delete Product</h3>
+                    <p>Delete products from store</p>
+                    <div class="card-hover">
+                        <span>Remove Items</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showProductAction('manage')">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>View / Manage Products</h3>
+                    <p>View all products and manage</p>
+                    <div class="card-hover">
+                        <span>Manage All</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showProductAction('stock')">
+                    <div class="card-icon">
+                        <i class="fas fa-boxes"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Update Stock</h3>
+                    <p>Update product stock levels</p>
+                    <div class="card-hover">
+                        <span>Update Stock</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showProductAction('status')">
+                    <div class="card-icon">
+                        <i class="fas fa-toggle-on"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Change Status</h3>
+                    <p>Activate/Deactivate products</p>
+                    <div class="card-hover">
+                        <span>Change Status</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Actions Content -->
+            <div class="action-content">
+                <!-- Add Product -->
+                <div id="add-product-content" class="action-panel active">
+                    <div class="panel-header">
+                        <h2>Add New Product</h2>
+                        <p>Fill in the details to create a new product listing</p>
+                    </div>
+                    <form class="product-form" id="addProductForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="productName"><i class="fas fa-tag"></i> Product Name *</label>
+                                <input type="text" id="productName" name="productName" placeholder="Enter product name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productCategory"><i class="fas fa-filter"></i> Category *</label>
+                                <select id="productCategory" name="productCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="fruits">Fruits</option>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="dairy">Dairy</option>
+                                    <option value="meat">Meat & Seafood</option>
+                                    <option value="bakery">Bakery</option>
+                                    <option value="beverages">Beverages</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice"><i class="fas fa-dollar-sign"></i> Price ($) *</label>
+                                <div class="price-input-group">
+                                    <button type="button" class="price-btn minus" onclick="adjustPrice(-1)">-</button>
+                                    <input type="number" id="productPrice" name="productPrice" step="0.01" min="0.01"
+                                        placeholder="0.00" required>
+                                    <button type="button" class="price-btn plus" onclick="adjustPrice(1)">+</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="productStock"><i class="fas fa-boxes"></i> Stock Quantity *</label>
+                                <input type="number" id="productStock" name="productStock" min="0"
+                                    placeholder="Enter quantity" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-check-circle"></i> Stock Status</label>
+                                <div class="status-toggle">
+                                    <label class="toggle-label">
+                                        <input type="radio" name="stockStatus" value="in-stock" checked>
+                                        <span class="toggle-btn active">In Stock</span>
+                                    </label>
+                                    <label class="toggle-label">
+                                        <input type="radio" name="stockStatus" value="out-of-stock">
+                                        <span class="toggle-btn">Out of Stock</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="productDescription"><i class="fas fa-align-left"></i> Description *</label>
+                                <textarea id="productDescription" name="productDescription" rows="4"
+                                    placeholder="Enter product description" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label><i class="fas fa-image"></i> Product Image</label>
+                                <div class="image-upload-container">
+                                    <div class="image-upload-option">
+                                        <h4><i class="fas fa-link"></i> Image URL</h4>
+                                        <input type="url" id="productImageUrl" name="productImageUrl"
+                                            placeholder="https://example.com/image.jpg">
+                                    </div>
+                                    <div class="image-upload-divider">
+                                        <span>OR</span>
+                                    </div>
+                                    <div class="image-upload-option">
+                                        <h4><i class="fas fa-upload"></i> Upload Image</h4>
+                                        <div class="upload-area" id="uploadArea">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <p>Drag & drop or click to upload</p>
+                                            <input type="file" id="productImageFile" name="productImageFile"
+                                                accept="image/*" hidden>
+                                            <button type="button" class="btn btn-outline"
+                                                onclick="document.getElementById('productImageFile').click()">Choose
+                                                File</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="resetProductForm()">
+                                <i class="fas fa-redo"></i>
+                                Reset
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Add Product
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Edit Product -->
+                <div id="edit-product-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Edit Products</h2>
+                        <p>Select and modify existing products</p>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="editProductSearch" placeholder="Search products to edit..."
+                            oninput="searchProducts()">
+                        <button class="search-btn" onclick="searchProducts()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="products-list" id="editProductsList">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Delete Product -->
+                <div id="delete-product-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Delete Products</h2>
+                        <p>Select products to remove from store</p>
+                    </div>
+                    <div class="danger-zone">
+                        <div class="warning-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Warning: This action cannot be undone</h3>
+                            <p>Products removed will be permanently deleted from the system.</p>
+                        </div>
+                        <div class="products-grid-delete" id="deleteProductsGrid">
+                            <!-- Products for deletion will be loaded here -->
+                        </div>
+                        <div class="delete-actions" id="deleteActions">
+                            <button class="btn btn-danger" onclick="deleteSelectedProducts()" disabled>
+                                <i class="fas fa-trash"></i>
+                                Delete Selected Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Products -->
+                <div id="manage-product-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Manage Products</h2>
+                        <p>View and manage all products</p>
+                    </div>
+                    <div class="products-table-container">
+                        <div class="table-actions">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="manageProductSearch" placeholder="Search products..."
+                                    oninput="filterProductsTable()">
+                            </div>
+                            <button class="btn btn-outline" onclick="exportProducts()">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="products-table" id="productsTable">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAllProducts"></th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <!-- Products will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update Stock -->
+                <div id="stock-product-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Update Stock</h2>
+                        <p>Update product stock quantities</p>
+                    </div>
+                    <div class="bulk-stock-update">
+                        <h3><i class="fas fa-boxes"></i> Bulk Stock Update</h3>
+                        <div class="bulk-form">
+                            <div class="form-group">
+                                <label for="stockAdjustment">Adjustment Value</label>
+                                <div class="adjustment-input">
+                                    <button type="button" class="adjust-btn" onclick="adjustBulkStock(-1)">-</button>
+                                    <input type="number" id="stockAdjustment" value="0" min="-999" max="999">
+                                    <button type="button" class="adjust-btn" onclick="adjustBulkStock(1)">+</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" onclick="applyBulkStockUpdate()">
+                                <i class="fas fa-check"></i>
+                                Apply to Selected
+                            </button>
+                        </div>
+                    </div>
+                    <div class="products-grid-stock" id="stockProductsGrid">
+                        <!-- Products for stock update will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Change Status -->
+                <div id="status-product-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Change Product Status</h2>
+                        <p>Activate or deactivate products</p>
+                    </div>
+                    <div class="status-controls">
+                        <div class="status-toggle-bulk">
+                            <h3><i class="fas fa-toggle-on"></i> Bulk Status Update</h3>
+                            <div class="bulk-status-buttons">
+                                <button class="btn btn-success" onclick="setBulkStatus('active')">
+                                    <i class="fas fa-check-circle"></i>
+                                    Activate Selected
+                                </button>
+                                <button class="btn btn-warning" onclick="setBulkStatus('inactive')">
+                                    <i class="fas fa-times-circle"></i>
+                                    Deactivate Selected
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-grid-status" id="statusProductsGrid">
+                        <!-- Products for status update will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Users Section -->
+        <section id="users-section" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-users"></i> User Management</h1>
+                <p>Manage customer accounts and permissions</p>
+                <button class="btn btn-primary" onclick="showUserAction('add')">
+                    <i class="fas fa-user-plus"></i>
+                    User
+                </button>
+            </div>
+
+            <!-- Users Grid -->
+            <div class="management-grid">
+                <div class="management-card" onclick="showUserAction('add')">
+                    <div class="card-icon">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Add User</h3>
+                    <p>Create new user accounts</p>
+                    <div class="card-hover">
+                        <span>Add New</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showUserAction('edit')">
+                    <div class="card-icon">
+                        <i class="fas fa-user-edit"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Edit User</h3>
+                    <p>Modify user information</p>
+                    <div class="card-hover">
+                        <span>Edit Users</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showUserAction('delete')">
+                    <div class="card-icon">
+                        <i class="fas fa-user-times"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Delete User</h3>
+                    <p>Delete user accounts</p>
+                    <div class="card-hover">
+                        <span>Remove Users</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showUserAction('manage')">
+                    <div class="card-icon">
+                        <i class="fas fa-users-cog"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>View / Manage Users</h3>
+                    <p>View all users and manage</p>
+                    <div class="card-hover">
+                        <span>Manage All</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showUserAction('status')">
+                    <div class="card-icon">
+                        <i class="fas fa-user-slash"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Activate/Deactivate</h3>
+                    <p>Change user status</p>
+                    <div class="card-hover">
+                        <span>Change Status</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Actions Content -->
+            <div class="action-content">
+                <!-- Add User -->
+                <div id="add-user-content" class="action-panel active">
+                    <div class="panel-header">
+                        <h2>Add New User</h2>
+                        <p>Create a new user account with appropriate permissions</p>
+                    </div>
+                    <form class="user-form" id="addUserForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="userFirstName"><i class="fas fa-user"></i> First Name *</label>
+                                <input type="text" id="userFirstName" name="userFirstName"
+                                    placeholder="Enter first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userLastName"><i class="fas fa-user"></i> Last Name *</label>
+                                <input type="text" id="userLastName" name="userLastName" placeholder="Enter last name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail"><i class="fas fa-envelope"></i> Email Address *</label>
+                                <input type="email" id="userEmail" name="userEmail" placeholder="Enter email address"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="userPhone" name="userPhone" placeholder="Enter phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="userRole"><i class="fas fa-user-tag"></i> User Role *</label>
+                                <select id="userRole" name="userRole" required>
+                                    <option value="">Select Role</option>
+                                    <option value="customer">Customer</option>
+                                    <option value="staff">Staff</option>
+                                    <option value="admin">Administrator</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="userPassword"><i class="fas fa-lock"></i> Password *</label>
+                                <div class="password-input">
+                                    <input type="password" id="userPassword" name="userPassword"
+                                        placeholder="Enter password" required>
+                                    <button type="button" class="toggle-password"
+                                        onclick="togglePasswordVisibility('userPassword')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-user-check"></i> Account Status</label>
+                                <div class="status-toggle">
+                                    <label class="toggle-label">
+                                        <input type="radio" name="userStatus" value="active" checked>
+                                        <span class="toggle-btn active">Active</span>
+                                    </label>
+                                    <label class="toggle-label">
+                                        <input type="radio" name="userStatus" value="inactive">
+                                        <span class="toggle-btn">Inactive</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="resetUserForm()">
+                                <i class="fas fa-redo"></i>
+                                Reset
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-user-plus"></i>
+                                Add User
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Edit User -->
+                <div id="edit-user-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Edit Users</h2>
+                        <p>Modify existing user accounts</p>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="editUserSearch" placeholder="Search users to edit..."
+                            oninput="searchUsers()">
+                        <button class="search-btn" onclick="searchUsers()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="users-list" id="editUsersList">
+                        <!-- Users will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Delete User -->
+                <div id="delete-user-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Delete Users</h2>
+                        <p>Delete user accounts from system</p>
+                    </div>
+                    <div class="danger-zone">
+                        <div class="warning-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Warning: This action cannot be undone</h3>
+                            <p>User accounts removed will lose all access and data.</p>
+                        </div>
+                        <div class="users-grid-delete" id="deleteUsersGrid">
+                            <!-- Users for deletion will be loaded here -->
+                        </div>
+                        <div class="delete-actions" id="deleteUserActions">
+                            <button class="btn btn-danger" onclick="deleteSelectedUsers()" disabled>
+                                <i class="fas fa-trash"></i>
+                                Delete Selected Users
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Users -->
+                <div id="manage-user-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Manage Users</h2>
+                        <p>View and manage all users</p>
+                    </div>
+                    <div class="users-table-container">
+                        <div class="table-actions">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="manageUserSearch" placeholder="Search users..."
+                                    oninput="filterUsersTable()">
+                            </div>
+                            <button class="btn btn-outline" onclick="exportUsers()">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="users-table" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAllUsers"></th>
+                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Registered</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <!-- Users will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Status -->
+                <div id="status-user-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>User Status Management</h2>
+                        <p>Activate or deactivate user accounts</p>
+                    </div>
+                    <div class="status-controls">
+                        <div class="status-toggle-bulk">
+                            <h3><i class="fas fa-toggle-on"></i> Bulk Status Update</h3>
+                            <div class="bulk-status-buttons">
+                                <button class="btn btn-success" onclick="setBulkUserStatus('active')">
+                                    <i class="fas fa-check-circle"></i>
+                                    Activate Selected
+                                </button>
+                                <button class="btn btn-warning" onclick="setBulkUserStatus('inactive')">
+                                    <i class="fas fa-times-circle"></i>
+                                    Deactivate Selected
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="users-grid-status" id="statusUsersGrid">
+                        <!-- Users for status update will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Orders Section -->
+        <section id="orders-section" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-shopping-bag"></i> Order Management</h1>
+                <p>Process and manage customer orders</p>
+                <button class="btn btn-primary" onclick="showOrderAction('manage')">
+                    <i class="fas fa-tasks"></i>
+                    Orders
+                </button>
+            </div>
+
+            <!-- Orders Grid -->
+            <div class="management-grid">
+                <div class="management-card" onclick="showOrderAction('view')">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>View / Manage Orders</h3>
+                    <p>View all customer orders</p>
+                    <div class="card-hover">
+                        <span>View Orders</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showOrderAction('edit')">
+                    <div class="card-icon">
+                        <i class="fas fa-edit"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Edit Order</h3>
+                    <p>Modify order details</p>
+                    <div class="card-hover">
+                        <span>Edit Orders</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showOrderAction('delete')">
+                    <div class="card-icon">
+                        <i class="fas fa-trash"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Delete / Cancel Order</h3>
+                    <p>Cancel or delete orders</p>
+                    <div class="card-hover">
+                        <span>Cancel Orders</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showOrderAction('status')">
+                    <div class="card-icon">
+                        <i class="fas fa-sync-alt"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Update Order Status</h3>
+                    <p>Update order processing status</p>
+                    <div class="card-hover">
+                        <span>Update Status</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Actions Content -->
+            <div class="action-content">
+                <!-- View/Manage Orders -->
+                <div id="view-order-content" class="action-panel active">
+                    <div class="panel-header">
+                        <h2>View / Manage Orders</h2>
+                        <p>View and manage all customer orders</p>
+                    </div>
+                    <div class="orders-table-container">
+                        <div class="table-actions">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="viewOrderSearch" placeholder="Search orders..."
+                                    oninput="filterOrdersTable()">
+                            </div>
+                            <div class="filter-actions">
+                                <select id="orderStatusFilter" onchange="filterOrdersTable()">
+                                    <option value="">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <button class="btn btn-outline" onclick="exportOrders()">
+                                    <i class="fas fa-download"></i>
+                                    Export
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="orders-table" id="ordersTable">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersTableBody">
+                                    <!-- Orders will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Order -->
+                <div id="edit-order-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Edit Orders</h2>
+                        <p>Modify existing order details</p>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="editOrderSearch" placeholder="Search orders to edit..."
+                            oninput="searchOrders()">
+                        <button class="search-btn" onclick="searchOrders()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="orders-list" id="editOrdersList">
+                        <!-- Orders will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Delete Order -->
+                <div id="delete-order-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Delete / Cancel Orders</h2>
+                        <p>Cancel or delete orders from system</p>
+                    </div>
+                    <div class="danger-zone">
+                        <div class="warning-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Warning: Order removal affects records</h3>
+                            <p>Cancelled orders can be restored, deleted orders are permanent.</p>
+                        </div>
+                        <div class="orders-grid-delete" id="deleteOrdersGrid">
+                            <!-- Orders for deletion will be loaded here -->
+                        </div>
+                        <div class="delete-actions" id="deleteOrderActions">
+                            <button class="btn btn-danger" onclick="deleteSelectedOrders()" disabled>
+                                <i class="fas fa-trash"></i>
+                                Delete Selected Orders
+                            </button>
+                            <button class="btn btn-warning" onclick="cancelSelectedOrders()" disabled>
+                                <i class="fas fa-ban"></i>
+                                Cancel Selected Orders
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update Order Status -->
+                <div id="status-order-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Update Order Status</h2>
+                        <p>Update order processing status</p>
+                    </div>
+                    <div class="status-controls">
+                        <div class="status-bulk-update">
+                            <h3><i class="fas fa-sync-alt"></i> Bulk Status Update</h3>
+                            <div class="bulk-status-select">
+                                <select id="bulkOrderStatus">
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="updateBulkOrderStatus()">
+                                    <i class="fas fa-check"></i>
+                                    Apply to Selected
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders-grid-status" id="statusOrdersGrid">
+                        <!-- Orders for status update will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports-section" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-chart-bar"></i> Reports & Analytics</h1>
+                <p>View detailed reports and analytics</p>
+                <button class="btn btn-primary" onclick="generateReport('sales')">
+                    <i class="fas fa-download"></i>
+                    Reports
+                </button>
+            </div>
+
+            <!-- Reports Grid -->
+            <div class="management-grid">
+                <div class="management-card" onclick="showReportAction('sales')">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Sales Report</h3>
+                    <p>View sales analytics and trends</p>
+                    <div class="card-hover">
+                        <span>View Report</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showReportAction('product')">
+                    <div class="card-icon">
+                        <i class="fas fa-box"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Product Report</h3>
+                    <p>Product performance analytics</p>
+                    <div class="card-hover">
+                        <span>View Report</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showReportAction('user')">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>User Report</h3>
+                    <p>User activity and demographics</p>
+                    <div class="card-hover">
+                        <span>View Report</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="management-card" onclick="showReportAction('order')">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <div class="icon-shine"></div>
+                    </div>
+                    <h3>Order Report</h3>
+                    <p>Order processing analytics</p>
+                    <div class="card-hover">
+                        <span>View Report</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Actions Content -->
+            <div class="action-content">
+                <!-- Sales Report -->
+                <div id="sales-report-content" class="action-panel active">
+                    <div class="panel-header">
+                        <h2>Sales Report</h2>
+                        <p>Sales analytics and revenue trends</p>
+                    </div>
+                    <div class="report-filters">
+                        <div class="filter-group">
+                            <label for="salesPeriod">Period</label>
+                            <select id="salesPeriod" onchange="updateSalesChart()">
+                                <option value="today">Today</option>
+                                <option value="week">This Week</option>
+                                <option value="month" selected>This Month</option>
+                                <option value="quarter">This Quarter</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="salesChartType">Chart Type</label>
+                            <select id="salesChartType" onchange="updateSalesChart()">
+                                <option value="line">Line Chart</option>
+                                <option value="bar">Bar Chart</option>
+                                <option value="area">Area Chart</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="exportReport('sales')">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                    </div>
+                    <div class="report-chart-container">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Sales Overview</h3>
+                                <span id="salesTotal">$12,458</span>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-arrow-up"></i>
+                                <div>
+                                    <h4>Revenue Growth</h4>
+                                    <span>+12%</span>
+                                </div>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-shopping-cart"></i>
+                                <div>
+                                    <h4>Average Order</h4>
+                                    <span>$45.67</span>
+                                </div>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h4>Best Day</h4>
+                                    <span>Monday</span>
+                                </div>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-tag"></i>
+                                <div>
+                                    <h4>Top Category</h4>
+                                    <span>Fruits</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Report -->
+                <div id="product-report-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Product Report</h2>
+                        <p>Product performance and inventory analysis</p>
+                    </div>
+                    <div class="report-filters">
+                        <div class="filter-group">
+                            <label for="productCategoryFilter">Category</label>
+                            <select id="productCategoryFilter" onchange="updateProductReport()">
+                                <option value="">All Categories</option>
+                                <option value="fruits">Fruits</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="dairy">Dairy</option>
+                                <option value="meat">Meat & Seafood</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="exportReport('product')">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                    </div>
+                    <div class="product-report-content">
+                        <div class="top-products">
+                            <h3>Top Selling Products</h3>
+                            <div class="top-products-list" id="topProductsList">
+                                <!-- Top products will be loaded here -->
+                            </div>
+                        </div>
+                        <div class="product-chart">
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h3>Category Performance</h3>
+                                </div>
+                                <div class="chart-wrapper">
+                                    <canvas id="productChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Report -->
+                <div id="user-report-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>User Report</h2>
+                        <p>User activity and demographics analysis</p>
+                    </div>
+                    <div class="report-filters">
+                        <div class="filter-group">
+                            <label for="userReportPeriod">Period</label>
+                            <select id="userReportPeriod" onchange="updateUserReport()">
+                                <option value="month">Last Month</option>
+                                <option value="quarter">Last Quarter</option>
+                                <option value="year">Last Year</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="exportReport('user')">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                    </div>
+                    <div class="user-report-content">
+                        <div class="user-stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="newUsers">156</h3>
+                                    <p>New Users</p>
+                                    <span class="stat-change positive">+8%</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="activeUsers">1,245</h3>
+                                    <p>Active Users</p>
+                                    <span class="stat-change positive">+12%</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="userOrders">3,456</h3>
+                                    <p>Orders Placed</p>
+                                    <span class="stat-change positive">+15%</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="userRevenue">$45,678</h3>
+                                    <p>User Revenue</p>
+                                    <span class="stat-change positive">+18%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-chart">
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h3>User Growth Trend</h3>
+                                </div>
+                                <div class="chart-wrapper">
+                                    <canvas id="userChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Report -->
+                <div id="order-report-content" class="action-panel">
+                    <div class="panel-header">
+                        <h2>Order Report</h2>
+                        <p>Order processing and fulfillment analytics</p>
+                    </div>
+                    <div class="report-filters">
+                        <div class="filter-group">
+                            <label for="orderReportPeriod">Period</label>
+                            <select id="orderReportPeriod" onchange="updateOrderReport()">
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="quarter">This Quarter</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="exportReport('order')">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                    </div>
+                    <div class="order-report-content">
+                        <div class="order-stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="pendingOrders">23</h3>
+                                    <p>Pending Orders</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="processingOrders">45</h3>
+                                    <p>Processing</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="deliveredOrders">1,180</h3>
+                                    <p>Delivered</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="cancelledOrders">12</h3>
+                                    <p>Cancelled</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-chart">
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h3>Order Status Distribution</h3>
+                                </div>
+                                <div class="chart-wrapper">
+                                    <canvas id="orderChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Operation completed successfully!</span>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Confirm Action</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Are you sure you want to proceed?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-danger" id="confirmAction">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="editModalTitle">Edit Item</h3>
+                <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="editModalBody">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveEdit()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal" id="addProductModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="modal-close" onclick="closeAddProductModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="product-form" id="addProductModalForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="modalProductName"><i class="fas fa-tag"></i> Product Name *</label>
+                            <input type="text" id="modalProductName" name="productName" placeholder="Enter product name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalProductCategory"><i class="fas fa-filter"></i> Category *</label>
+                            <select id="modalProductCategory" name="productCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="fruits">Fruits</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="dairy">Dairy</option>
+                                <option value="meat">Meat & Seafood</option>
+                                <option value="bakery">Bakery</option>
+                                <option value="beverages">Beverages</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalProductPrice"><i class="fas fa-dollar-sign"></i> Price ($) *</label>
+                            <div class="price-input-group">
+                                <button type="button" class="price-btn minus" onclick="adjustModalPrice(-1)">-</button>
+                                <input type="number" id="modalProductPrice" name="productPrice" step="0.01" min="0.01"
+                                    placeholder="0.00" required>
+                                <button type="button" class="price-btn plus" onclick="adjustModalPrice(1)">+</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalProductStock"><i class="fas fa-boxes"></i> Stock Quantity *</label>
+                            <input type="number" id="modalProductStock" name="productStock" min="0"
+                                placeholder="Enter quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-check-circle"></i> Stock Status</label>
+                            <div class="status-toggle">
+                                <label class="toggle-label">
+                                    <input type="radio" name="modalStockStatus" value="in-stock" checked>
+                                    <span class="toggle-btn active">In Stock</span>
+                                </label>
+                                <label class="toggle-label">
+                                    <input type="radio" name="modalStockStatus" value="out-of-stock">
+                                    <span class="toggle-btn">Out of Stock</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="modalProductDescription"><i class="fas fa-align-left"></i> Description *</label>
+                            <textarea id="modalProductDescription" name="productDescription" rows="4"
+                                placeholder="Enter product description" required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label><i class="fas fa-image"></i> Product Image</label>
+                            <div class="image-upload-container">
+                                <div class="image-upload-option">
+                                    <h4><i class="fas fa-link"></i> Image URL</h4>
+                                    <input type="url" id="modalProductImageUrl" name="productImageUrl"
+                                        placeholder="https://example.com/image.jpg">
+                                </div>
+                                <div class="image-upload-divider">
+                                    <span>OR</span>
+                                </div>
+                                <div class="image-upload-option">
+                                    <h4><i class="fas fa-upload"></i> Upload Image</h4>
+                                    <div class="upload-area" id="modalUploadArea">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag & drop or click to upload</p>
+                                        <input type="file" id="modalProductImageFile" name="productImageFile"
+                                            accept="image/*" hidden>
+                                        <button type="button" class="btn btn-outline"
+                                            onclick="document.getElementById('modalProductImageFile').click()">Choose
+                                            File</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeAddProductModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitAddProductModal()">
+                    <i class="fas fa-plus"></i>
+                    Add Product
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal" id="addUserModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Add New User</h3>
+                <button class="modal-close" onclick="closeAddUserModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="user-form" id="addUserModalForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="modalUserFirstName"><i class="fas fa-user"></i> First Name *</label>
+                            <input type="text" id="modalUserFirstName" name="userFirstName"
+                                placeholder="Enter first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalUserLastName"><i class="fas fa-user"></i> Last Name *</label>
+                            <input type="text" id="modalUserLastName" name="userLastName" placeholder="Enter last name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalUserEmail"><i class="fas fa-envelope"></i> Email Address *</label>
+                            <input type="email" id="modalUserEmail" name="userEmail" placeholder="Enter email address"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalUserPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="modalUserPhone" name="userPhone" placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalUserRole"><i class="fas fa-user-tag"></i> User Role *</label>
+                            <select id="modalUserRole" name="userRole" required>
+                                <option value="">Select Role</option>
+                                <option value="customer">Customer</option>
+                                <option value="staff">Staff</option>
+                                <option value="admin">Administrator</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalUserPassword"><i class="fas fa-lock"></i> Password *</label>
+                            <div class="password-input">
+                                <input type="password" id="modalUserPassword" name="userPassword"
+                                    placeholder="Enter password" required>
+                                <button type="button" class="toggle-password"
+                                    onclick="toggleModalPasswordVisibility('modalUserPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user-check"></i> Account Status</label>
+                            <div class="status-toggle">
+                                <label class="toggle-label">
+                                    <input type="radio" name="modalUserStatus" value="active" checked>
+                                    <span class="toggle-btn active">Active</span>
+                                </label>
+                                <label class="toggle-label">
+                                    <input type="radio" name="modalUserStatus" value="inactive">
+                                    <span class="toggle-btn">Inactive</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeAddUserModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitAddUserModal()">
+                    <i class="fas fa-user-plus"></i>
+                    Add User
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/admin.js"></script>
+</body>
+
+</html>

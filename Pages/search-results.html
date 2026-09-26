@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - FreshMart</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/search-results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+     
+   <!-- ===== ANIMATED NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <!-- Animated Logo -->
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <span class="logo-text">FreshMart</span>
+                <div class="logo-pulse"></div>
+            </a>
+        </div>
+        
+        <!-- Navigation Menu with Animations -->
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" class="nav-link" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="store.html" class="nav-link" data-page="store">
+                <i class="fas fa-store"></i>
+                <span>Store</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            
+            <a href="category.html" class="nav-link" data-page="categories">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="offers.html" class="nav-link" data-page="offers">
+                <i class="fas fa-tag"></i>
+                <span>Offers</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="about-us.html" class="nav-link" data-page="about">
+                <i class="fas fa-users"></i>
+                <span>About Us</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <a href="contact-us.html" class="nav-link" data-page="contact">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+                <div class="link-underline"></div>
+            </a>
+            
+            <!-- Navigation Icons with Animations -->
+            <div class="nav-icons">
+        
+                
+                <!-- User Account with Hover -->
+                <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                    <i class="fas fa-user"></i>
+                    <div class="icon-tooltip">Account</div>
+                </a>
+
+                <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+                
+                <!-- Cart with Counter Animation -->
+                <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                    <div class="cart-pulse"></div>
+                    <div class="icon-tooltip">Cart</div>
+                </a>
+                
+                <!-- ===== ADMIN ICON - NEW ===== -->
+                <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="admin-glow"></div>
+                    <div class="icon-tooltip">Admin</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Animated Hamburger Menu -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <div class="hamburger-glow"></div>
+        </button>
+    </div>
+    
+    <!-- Navbar Background Effects -->
+    <div class="nav-background"></div>
+    <div class="nav-shine"></div>
+</nav>
+
+
+   <!-- Main Content -->
+    <main class="search-results-page">
+        <div class="container">
+            <!-- Search Header -->
+            <div class="search-header">
+                <div class="search-info" id="searchInfo">
+                    <h1>Search Results</h1>
+                    <p id="resultsCount">Enter a search term to find products</p>
+                </div>
+            </div>
+
+            <!-- Search Filters and Results Container -->
+            <div class="search-content">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" id="clearFilters">Clear All</button>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="filter-options" id="categoryFilters">
+                            <label class="filter-option">
+                                <input type="checkbox" value="fruits" data-filter="category">
+                                <span class="checkmark"></span>
+                                Fruits
+                                <span class="filter-count">(12)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="vegetables" data-filter="category">
+                                <span class="checkmark"></span>
+                                Vegetables
+                                <span class="filter-count">(15)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="dairy" data-filter="category">
+                                <span class="checkmark"></span>
+                                Dairy
+                                <span class="filter-count">(8)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="meat" data-filter="category">
+                                <span class="checkmark"></span>
+                                Meat & Poultry
+                                <span class="filter-count">(6)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="beverages" data-filter="category">
+                                <span class="checkmark"></span>
+                                Beverages
+                                <span class="filter-count">(10)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="snacks" data-filter="category">
+                                <span class="checkmark"></span>
+                                Snacks
+                                <span class="filter-count">(20)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-filter">
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="Min" min="0">
+                                <span>-</span>
+                                <input type="number" id="maxPrice" placeholder="Max" min="0">
+                            </div>
+                            <div class="price-slider">
+                                <input type="range" id="priceRange" min="0" max="100" value="100" class="slider">
+                            </div>
+                            <div class="price-display">
+                                <span>Up to $<span id="priceValue">100</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-group">
+                        <h4>Customer Rating</h4>
+                        <div class="filter-options" id="ratingFilters">
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4" data-filter="rating">
+                                <span class="checkmark"></span>
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    4.0 & up
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="3" data-filter="rating">
+                                <span class="checkmark"></span>
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    3.0 & up
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="2" data-filter="rating">
+                                <span class="checkmark"></span>
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    2.0 & up
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Availability Filter -->
+                    <div class="filter-group">
+                        <h4>Availability</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="availability" value="in-stock">
+                                <span class="checkmark"></span>
+                                In Stock
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="availability" value="pre-order">
+                                <span class="checkmark"></span>
+                                Pre-Order Available
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Dietary Preferences -->
+                    <div class="filter-group">
+                        <h4>Dietary Preferences</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="dietary" value="organic">
+                                <span class="checkmark"></span>
+                                Organic
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="dietary" value="gluten-free">
+                                <span class="checkmark"></span>
+                                Gluten Free
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="dietary" value="vegan">
+                                <span class="checkmark"></span>
+                                Vegan
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Results Section -->
+                <section class="results-section">
+                    <!-- Results Header with Sorting -->
+                    <div class="results-header">
+                        <div class="results-meta">
+                            <span id="resultsMeta">All Products</span>
+                            <div class="mobile-filters-toggle">
+                                <button id="mobileFiltersBtn">
+                                    <i class="fas fa-filter"></i>
+                                    Filters
+                                </button>
+                            </div>
+                        </div>
+                        <div class="sort-options">
+                            <label for="sortSelect">Sort by:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="relevance">Relevance</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="newest">Newest</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div class="loading-state" id="loadingState" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <p>Searching for products...</p>
+                    </div>
+
+                    <!-- Results Grid -->
+                    <div class="results-grid" id="resultsGrid">
+                        <!-- Products will be dynamically inserted here -->
+                    </div>
+
+                    <!-- No Results State -->
+                    <div class="no-results-state" id="noResultsState" style="display: none;">
+                        <div class="no-results-content">
+                            <i class="fas fa-search"></i>
+                            <h2>No Results Found</h2>
+                            <p>We couldn't find any products matching your search criteria.</p>
+                            <div class="no-results-suggestions">
+                                <h3>Suggestions:</h3>
+                                <ul>
+                                    <li>Check your spelling</li>
+                                    <li>Try more general keywords</li>
+                                    <li>Browse by category instead</li>
+                                </ul>
+                            </div>
+                            <div class="no-results-actions">
+                                <button class="btn btn-primary" onclick="clearSearch()">Clear Search</button>
+                                <a href="category.html" class="btn btn-outline">Browse Categories</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Error State -->
+                    <div class="error-state" id="errorState" style="display: none;">
+                        <div class="error-content">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h2>Search Temporarily Unavailable</h2>
+                            <p>We're experiencing technical difficulties. Please try again in a few moments.</p>
+                            <div class="error-actions">
+                                <button class="btn btn-primary" onclick="retrySearch()">
+                                    <i class="fas fa-redo"></i>
+                                    Try Again
+                                </button>
+                                <a href="index.html" class="btn btn-outline">Go to Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+                        <button class="btn btn-outline" id="loadMoreBtn">
+                            <i class="fas fa-plus"></i>
+                            Load More Products
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Recent Searches -->
+            <div class="recent-searches-section" id="recentSearchesSection" style="display: none;">
+                <h3>Recent Searches</h3>
+                <div class="recent-searches" id="recentSearches"></div>
+            </div>
+
+            <!-- Popular Searches -->
+            <div class="popular-searches-section">
+                <h3>Popular Searches</h3>
+                <div class="popular-searches">
+                    <button class="search-tag" data-search="apple">Apples</button>
+                    <button class="search-tag" data-search="milk">Milk</button>
+                    <button class="search-tag" data-search="bread">Bread</button>
+                    <button class="search-tag" data-search="chicken">Chicken</button>
+                    <button class="search-tag" data-search="organic">Organic</button>
+                    <button class="search-tag" data-search="snacks">Snacks</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/search-results.js"></script>
+</body>
+</html>

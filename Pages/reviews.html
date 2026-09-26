@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Feedback - FreshMart</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/reviews.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="category.html" class="nav-link" data-page="categories">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                    <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+
+                    <!-- ===== ADMIN ICON - NEW ===== -->
+                    <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                        <i class="fas fa-user-shield"></i>
+                        <div class="admin-glow"></div>
+                        <div class="icon-tooltip">Admin</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+    <!-- Reviews Header -->
+    <section class="reviews-header">
+        <div class="container">
+            <div class="reviews-header-content">
+                <h1>Customer Reviews & Feedback</h1>
+                <p>See what our customers are saying about FreshMart and share your experience</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Reviews & Feedback</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Overview -->
+    <section class="reviews-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h3>4.8</h3>
+                        <p>Overall Rating</p>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">Based on 1,247 reviews</span>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Rating Distribution</h3>
+                        <div class="rating-bars">
+                            <div class="rating-bar">
+                                <span>5 Stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 72%"></div>
+                                </div>
+                                <span>72%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4 Stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 18%"></div>
+                                </div>
+                                <span>18%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3 Stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 6%"></div>
+                                </div>
+                                <span>6%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>2 Stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 3%"></div>
+                                </div>
+                                <span>3%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>1 Star</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 1%"></div>
+                                </div>
+                                <span>1%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Top Categories</h3>
+                        <div class="category-ratings">
+                            <div class="category-rating">
+                                <span>Fresh Produce</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <strong>4.9</strong>
+                                </div>
+                            </div>
+                            <div class="category-rating">
+                                <span>Dairy Products</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <strong>4.7</strong>
+                                </div>
+                            </div>
+                            <div class="category-rating">
+                                <span>Delivery Service</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <strong>4.8</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Content -->
+    <section class="reviews-content">
+        <div class="container">
+            <div class="reviews-layout">
+                <!-- Main Reviews Section -->
+                <div class="reviews-main">
+                    <!-- Reviews Filter -->
+                    <div class="reviews-filter">
+                        <div class="filter-section">
+                            <h3>Filter Reviews</h3>
+                            <div class="filter-options">
+                                <div class="filter-group">
+                                    <label>Rating</label>
+                                    <div class="rating-filter">
+                                        <button class="rating-filter-btn active" data-rating="all">All Ratings</button>
+                                        <button class="rating-filter-btn" data-rating="5">
+                                            <i class="fas fa-star"></i> 5
+                                        </button>
+                                        <button class="rating-filter-btn" data-rating="4">
+                                            <i class="fas fa-star"></i> 4
+                                        </button>
+                                        <button class="rating-filter-btn" data-rating="3">
+                                            <i class="fas fa-star"></i> 3
+                                        </button>
+                                        <button class="rating-filter-btn" data-rating="2">
+                                            <i class="fas fa-star"></i> 2
+                                        </button>
+                                        <button class="rating-filter-btn" data-rating="1">
+                                            <i class="fas fa-star"></i> 1
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label>Sort By</label>
+                                    <select class="sort-select" id="sortReviews">
+                                        <option value="newest">Newest First</option>
+                                        <option value="oldest">Oldest First</option>
+                                        <option value="highest">Highest Rated</option>
+                                        <option value="lowest">Lowest Rated</option>
+                                        <option value="most_helpful">Most Helpful</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label>Product Type</label>
+                                    <select class="category-select" id="categoryFilter">
+                                        <option value="all">All Products</option>
+                                        <option value="fruits">Fruits</option>
+                                        <option value="vegetables">Vegetables</option>
+                                        <option value="dairy">Dairy</option>
+                                        <option value="meat">Meat & Poultry</option>
+                                        <option value="beverages">Beverages</option>
+                                        <option value="snacks">Snacks</option>
+                                        <option value="pantry">Pantry Staples</option>
+                                        <option value="bakery">Bakery</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label>With Photos</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="photosOnly">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search-section">
+                            <div class="search-box">
+                                <input type="text" id="reviewSearch" placeholder="Search reviews..." class="search-input">
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Write Review Button -->
+                    <div class="write-review-section">
+                        <button class="btn btn-primary btn-write-review" onclick="openWriteReviewModal()">
+                            <i class="fas fa-pen"></i>
+                            Write a Review
+                        </button>
+                        <div class="review-guidelines">
+                            <button class="btn-link" onclick="showReviewGuidelines()">
+                                <i class="fas fa-info-circle"></i>
+                                Review Guidelines
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Reviews List -->
+                    <div class="reviews-list" id="reviewsList">
+                        <!-- Review items will be loaded dynamically -->
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container">
+                        <button class="btn btn-outline" onclick="loadMoreReviews()">
+                            <i class="fas fa-chevron-down"></i>
+                            Load More Reviews
+                        </button>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-reviews" id="emptyReviews">
+                        <div class="empty-content">
+                            <i class="fas fa-comments"></i>
+                            <h4>No reviews found</h4>
+                            <p>Try adjusting your filters or be the first to write a review!</p>
+                            <button class="btn btn-primary" onclick="openWriteReviewModal()">Write First Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="reviews-sidebar">
+                    <!-- Recent Products Reviewed -->
+                    <div class="sidebar-section">
+                        <h3>Recently Reviewed Products</h3>
+                        <div class="recent-products">
+                            <div class="recent-product">
+                                <img src="../images/products/apple.jpg" alt="Organic Apples">
+                                <div class="product-info">
+                                    <h4>Organic Apples</h4>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span>4.7 (128)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-product">
+                                <img src="../images/products/milk.jpg" alt="Fresh Milk">
+                                <div class="product-info">
+                                    <h4>Fresh Milk</h4>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span>4.9 (95)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-product">
+                                <img src="../images/products/bread.jpg" alt="Whole Wheat Bread">
+                                <div class="product-info">
+                                    <h4>Whole Wheat Bread</h4>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span>4.8 (76)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Statistics -->
+                    <div class="sidebar-section">
+                        <h3>Review Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>1,247</strong>
+                                    <span>Total Reviews</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-camera"></i>
+                                <div>
+                                    <strong>543</strong>
+                                    <span>Reviews with Photos</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-thumbs-up"></i>
+                                <div>
+                                    <strong>89%</strong>
+                                    <span>Positive Reviews</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div>
+                                    <strong>4.8</strong>
+                                    <span>Delivery Rating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Guidelines -->
+                    <div class="sidebar-section">
+                        <h3>Review Guidelines</h3>
+                        <div class="guidelines-list">
+                            <div class="guideline">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Be specific and detailed</span>
+                            </div>
+                            <div class="guideline">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Include photos when possible</span>
+                            </div>
+                            <div class="guideline">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Focus on product quality</span>
+                            </div>
+                            <div class="guideline">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Be honest and fair</span>
+                            </div>
+                            <div class="guideline">
+                                <i class="fas fa-check-circle"></i>
+                                <span>No offensive language</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-sm" onclick="showReviewGuidelines()">
+                            Read Full Guidelines
+                        </button>
+                    </div>
+
+                    <!-- Featured Review -->
+                    <div class="sidebar-section featured-review">
+                        <h3>Featured Review</h3>
+                        <div class="featured-review-card">
+                            <div class="reviewer-info">
+                                <img src="../images/avatars/avatar1.jpg" alt="Featured Reviewer" class="reviewer-avatar">
+                                <div>
+                                    <strong>Emily Chen</strong>
+                                    <span>Verified Buyer</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>2 days ago</span>
+                            </div>
+                            <p class="review-excerpt">"The quality of fruits and vegetables is consistently excellent. Delivery is always on time and the packaging is perfect!"</p>
+                            <div class="review-product">
+                                <img src="../images/products/avocado.jpg" alt="Fresh Avocados">
+                                <span>Fresh Avocados</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel (Visible only to admins) -->
+    <section class="admin-reviews-panel" id="adminPanel" style="display: none;">
+        <div class="container">
+            <div class="admin-panel-header">
+                <h2><i class="fas fa-shield-alt"></i> Reviews Management</h2>
+                <p>Manage customer reviews and feedback</p>
+            </div>
+
+            <div class="admin-controls">
+                <div class="control-group">
+                    <h4>Quick Actions</h4>
+                    <div class="control-buttons">
+                        <button class="btn btn-outline" onclick="exportReviews()">
+                            <i class="fas fa-download"></i>
+                            Export Reviews
+                        </button>
+                        <button class="btn btn-outline" onclick="bulkDeleteReviews()">
+                            <i class="fas fa-trash"></i>
+                            Bulk Delete
+                        </button>
+                        <button class="btn btn-primary" onclick="refreshReviews()">
+                            <i class="fas fa-sync"></i>
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h4>Statistics</h4>
+                    <div class="admin-stats">
+                        <div class="admin-stat">
+                            <span class="stat-value">1,247</span>
+                            <span class="stat-label">Total Reviews</span>
+                        </div>
+                        <div class="admin-stat">
+                            <span class="stat-value">23</span>
+                            <span class="stat-label">Pending</span>
+                        </div>
+                        <div class="admin-stat">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Flagged</span>
+                        </div>
+                        <div class="admin-stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Avg Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-reviews-list" id="adminReviewsList">
+                <!-- Admin review items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Write Review Modal -->
+    <div class="modal" id="writeReviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Write a Review</h3>
+                <button class="modal-close" onclick="closeWriteReviewModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="review-form" id="reviewForm">
+                    <!-- Product Selection -->
+                    <div class="form-section">
+                        <h4>Select Product</h4>
+                        <div class="product-selection">
+                            <div class="search-product">
+                                <input type="text" id="productSearch" placeholder="Search for a product..." class="form-control">
+                                <div class="search-results" id="productResults"></div>
+                            </div>
+                            <div class="selected-product" id="selectedProduct" style="display: none;">
+                                <img src="" alt="Selected Product" id="selectedProductImage">
+                                <div class="product-details">
+                                    <h5 id="selectedProductName"></h5>
+                                    <span id="selectedProductCategory"></span>
+                                </div>
+                                <button type="button" class="btn-remove" onclick="clearProductSelection()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="form-section">
+                        <h4>Overall Rating</h4>
+                        <div class="rating-input">
+                            <div class="star-rating" id="starRating">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                            </div>
+                            <span class="rating-text" id="ratingText">Select a rating</span>
+                        </div>
+                    </div>
+
+                    <!-- Review Details -->
+                    <div class="form-section">
+                        <h4>Review Details</h4>
+                        <div class="form-group">
+                            <label for="reviewTitle" class="form-label">Review Title *</label>
+                            <input type="text" id="reviewTitle" class="form-control" placeholder="Summarize your experience" required maxlength="100">
+                            <div class="char-count">
+                                <span id="titleCharCount">0</span>/100 characters
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reviewText" class="form-label">Review Description *</label>
+                            <textarea id="reviewText" class="form-control" placeholder="Share your experience with this product..." rows="5" required maxlength="1000"></textarea>
+                            <div class="char-count">
+                                <span id="textCharCount">0</span>/1000 characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Upload -->
+                    <div class="form-section">
+                        <h4>Add Photos (Optional)</h4>
+                        <div class="photo-upload">
+                            <div class="upload-area" id="uploadArea">
+                                <i class="fas fa-camera"></i>
+                                <p>Click to upload photos or drag and drop</p>
+                                <span>JPEG, PNG up to 5MB each</span>
+                                <input type="file" id="photoUpload" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="uploaded-photos" id="uploadedPhotos"></div>
+                        </div>
+                    </div>
+
+                    <!-- Review Aspects -->
+                    <div class="form-section">
+                        <h4>Product Aspects</h4>
+                        <div class="aspect-ratings">
+                            <div class="aspect-rating">
+                                <label>Quality</label>
+                                <div class="aspect-stars" data-aspect="quality">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            <div class="aspect-rating">
+                                <label>Freshness</label>
+                                <div class="aspect-stars" data-aspect="freshness">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            <div class="aspect-rating">
+                                <label>Value for Money</label>
+                                <div class="aspect-stars" data-aspect="value">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation -->
+                    <div class="form-section">
+                        <h4>Would you recommend this product?</h4>
+                        <div class="recommendation-options">
+                            <label class="radio-label">
+                                <input type="radio" name="recommendation" value="yes" checked>
+                                <span class="radio-checkmark"></span>
+                                <span>Yes, I recommend this product</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="recommendation" value="no">
+                                <span class="radio-checkmark"></span>
+                                <span>No, I don't recommend this product</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Verification -->
+                    <div class="form-section">
+                        <div class="verification-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="verifiedPurchase" checked>
+                                <span class="checkmark"></span>
+                                <span>I confirm this is a genuine purchase</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                <span>I agree to the review guidelines and terms</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="closeWriteReviewModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Guidelines Modal -->
+    <div class="modal" id="guidelinesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Review Guidelines</h3>
+                <button class="modal-close" onclick="closeGuidelinesModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="guidelines-content">
+                    <div class="guideline-section">
+                        <h4><i class="fas fa-check-circle"></i> Writing Helpful Reviews</h4>
+                        <ul>
+                            <li>Be specific about your experience with the product</li>
+                            <li>Include details about quality, freshness, and value</li>
+                            <li>Mention how you used the product</li>
+                            <li>Add photos to show the actual product</li>
+                            <li>Compare with similar products if possible</li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-section">
+                        <h4><i class="fas fa-times-circle"></i> What to Avoid</h4>
+                        <ul>
+                            <li>Offensive, inappropriate, or hateful language</li>
+                            <li>Reviews not based on actual experience</li>
+                            <li>Personal information about others</li>
+                            <li>Promotional or commercial content</li>
+                            <li>Reviews about delivery or customer service (use feedback form instead)</li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-section">
+                        <h4><i class="fas fa-star"></i> Rating Guidelines</h4>
+                        <div class="rating-guide">
+                            <div class="rating-level">
+                                <strong>5 Stars:</strong> Excellent - Exceeded expectations in all aspects
+                            </div>
+                            <div class="rating-level">
+                                <strong>4 Stars:</strong> Very Good - Met expectations with minor issues
+                            </div>
+                            <div class="rating-level">
+                                <strong>3 Stars:</strong> Average - Met basic expectations
+                            </div>
+                            <div class="rating-level">
+                                <strong>2 Stars:</strong> Poor - Below expectations with significant issues
+                            </div>
+                            <div class="rating-level">
+                                <strong>1 Star:</strong> Very Poor - Completely unsatisfactory
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guideline-section">
+                        <h4><i class="fas fa-camera"></i> Photo Guidelines</h4>
+                        <ul>
+                            <li>Upload clear, well-lit photos</li>
+                            <li>Show the actual product you received</li>
+                            <li>Include multiple angles if helpful</li>
+                            <li>Show any issues or defects clearly</li>
+                            <li>Maximum 5 photos per review</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Detail Modal -->
+    <div class="modal" id="reviewDetailModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3>Review Details</h3>
+                <button class="modal-close" onclick="closeReviewDetailModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="review-detail-content" id="reviewDetailContent">
+                    <!-- Review details will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Delete Confirmation Modal -->
+    <div class="modal" id="deleteReviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Review</h3>
+                <button class="modal-close" onclick="closeDeleteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="delete-confirmation">
+                    <div class="warning-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4>Are you sure you want to delete this review?</h4>
+                    <p>This action cannot be undone. The review will be permanently removed from the system.</p>
+                    
+                    <div class="review-preview" id="deleteReviewPreview">
+                        <!-- Review preview will be loaded here -->
+                    </div>
+
+                    <div class="delete-reason">
+                        <label for="deleteReason" class="form-label">Reason for deletion (optional)</label>
+                        <select id="deleteReason" class="form-control">
+                            <option value="">Select a reason</option>
+                            <option value="inappropriate">Inappropriate content</option>
+                            <option value="fake">Fake or spam review</option>
+                            <option value="guidelines">Violates review guidelines</option>
+                            <option value="personal_info">Contains personal information</option>
+                            <option value="other">Other reason</option>
+                        </select>
+                        <textarea id="deleteNotes" class="form-control" placeholder="Additional notes..." rows="3" style="display: none;"></textarea>
+                    </div>
+
+                    <div class="delete-actions">
+                        <button class="btn btn-outline" onclick="closeDeleteModal()">Cancel</button>
+                        <button class="btn btn-danger" onclick="confirmDeleteReview()">
+                            <i class="fas fa-trash"></i>
+                            Delete Review
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Form Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="feedback-header">
+                <h2>General Feedback</h2>
+                <p>Share your overall experience with FreshMart</p>
+            </div>
+
+            <div class="feedback-content">
+                <div class="feedback-form-container">
+                    <form class="feedback-form" id="feedbackForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedbackType" class="form-label">Feedback Type *</label>
+                                <select id="feedbackType" class="form-control" required>
+                                    <option value="">Select type</option>
+                                    <option value="general">General Feedback</option>
+                                    <option value="website">Website Experience</option>
+                                    <option value="delivery">Delivery Service</option>
+                                    <option value="product_quality">Product Quality</option>
+                                    <option value="customer_service">Customer Service</option>
+                                    <option value="suggestion">Suggestion</option>
+                                    <option value="complaint">Complaint</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedbackPriority" class="form-label">Priority</label>
+                                <select id="feedbackPriority" class="form-control">
+                                    <option value="low">Low</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedbackSubject" class="form-label">Subject *</label>
+                            <input type="text" id="feedbackSubject" class="form-control" placeholder="Brief summary of your feedback" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedbackMessage" class="form-label">Detailed Feedback *</label>
+                            <textarea id="feedbackMessage" class="form-control" placeholder="Please provide detailed feedback about your experience..." rows="6" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedbackEmail" class="form-label">Email Address *</label>
+                            <input type="email" id="feedbackEmail" class="form-control" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="allowContact">
+                                <span class="checkmark"></span>
+                                <span>I allow FreshMart to contact me regarding this feedback</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="anonymousFeedback">
+                                <span class="checkmark"></span>
+                                <span>Submit anonymously</span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="resetFeedbackForm()">Reset</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Feedback
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="feedback-info">
+                    <h3>Why Your Feedback Matters</h3>
+                    <div class="info-points">
+                        <div class="info-point">
+                            <i class="fas fa-shopping-basket"></i>
+                            <div>
+                                <h4>Improve Products</h4>
+                                <p>Your feedback helps us source better quality products</p>
+                            </div>
+                        </div>
+                        <div class="info-point">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Enhance Delivery</h4>
+                                <p>We use feedback to improve our delivery services</p>
+                            </div>
+                        </div>
+                        <div class="info-point">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>Better Service</h4>
+                                <p>Customer service improvements based on your input</p>
+                            </div>
+                        </div>
+                        <div class="info-point">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>Shape Offers</h4>
+                                <p>Your preferences help us create better deals and offers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-stats">
+                        <div class="feedback-stat">
+                            <strong>98%</strong>
+                            <span>Feedback Response Rate</span>
+                        </div>
+                        <div class="feedback-stat">
+                            <strong>24h</strong>
+                            <span>Average Response Time</span>
+                        </div>
+                        <div class="feedback-stat">
+                            <strong>500+</strong>
+                            <span>Improvements Made</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/reviews.js"></script>
+</body>
+</html>

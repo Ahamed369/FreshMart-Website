@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - About Us</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/about-us.css">
+      <link rel="stylesheet" href="../Styles/wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                 
+            <a href="category.html" class="nav-link" data-page="categories">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+                <div class="link-underline"></div>
+            </a>
+
+
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+
+
+
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                        <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+
+            
+                <!-- ===== ADMIN ICON - NEW ===== -->
+                <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="admin-glow"></div>
+                    <div class="icon-tooltip">Admin</div>
+                </a>
+            </div>
+        </div>
+        
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Our Story</h1>
+                <p class="hero-subtitle">From a student's idea to your trusted grocery partner</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Happy Students</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Fresh Products</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30min</span>
+                        <span class="stat-label">Delivery Promise</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Customer Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../Images/aboutUs-HeroImage.jpg" alt="FreshMart Team" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>How It All Began</h2>
+                    <p class="story-intro">FreshMart was born out of a simple observation: university students struggle
+                        to access fresh, affordable groceries while balancing their studies and busy schedules.</p>
+
+                    <div class="story-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <div class="timeline-content">
+                                <h3>The Idea</h3>
+                                <p>Our founder, Sarah Johnson, was a computer science student who found herself choosing
+                                    between expensive delivery services or time-consuming grocery trips. She realized
+                                    there had to be a better way.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">
+                                <h3>First Prototype</h3>
+                                <p>Sarah partnered with fellow students Mike Chen and Emily Rodriguez to create the
+                                    first version of FreshMart, serving their university campus with a simple web app
+                                    and bicycle delivery.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-content">
+                                <h3>Expansion</h3>
+                                <p>FreshMart expanded to serve 25+ universities across the country, building
+                                    partnerships with local farms and suppliers to ensure the freshest products at
+                                    student-friendly prices.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-content">
+                                <h3>Today</h3>
+                                <p>We've served over 100,000 students while maintaining our core mission: making fresh,
+                                    quality groceries accessible and affordable for student communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="../Images/OurStory.jpg" alt="Our Story" class="story-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card mission">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower university students with convenient access to fresh, affordable groceries, enabling
+                        them to focus on their studies while maintaining a healthy lifestyle. We believe every student
+                        deserves quality nutrition without the hassle or high costs.</p>
+                </div>
+                <div class="mv-card vision">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading grocery delivery service for students worldwide, creating a community where
+                        healthy eating is accessible, affordable, and convenient for every university student,
+                        regardless of their location or budget.</p>
+                </div>
+                <div class="mv-card values">
+                    <div class="mv-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <ul class="values-list">
+                        <li><i class="fas fa-check"></i> Student-First Approach</li>
+                        <li><i class="fas fa-check"></i> Quality & Freshness</li>
+                        <li><i class="fas fa-check"></i> Affordable Pricing</li>
+                        <li><i class="fas fa-check"></i> Community Support</li>
+                        <li><i class="fas fa-check"></i> Sustainability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="our-team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">The passionate people behind FreshMart's success</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../Images/TeamMember04.jpg" alt="Sarah Johnson">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <span class="member-role">Founder & CEO</span>
+                        <p>Former computer science student who turned her grocery struggles into a mission to help
+                            fellow students. Passionate about healthy eating and technology.</p>
+                        <div class="member-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Access to healthy food shouldn't be a luxury for students."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../Images/TeamMember01.jpg" alt="Mike Chen">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Mike Chen</h3>
+                        <span class="member-role">Operations Manager</span>
+                        <p>Manages our delivery network and ensures smooth operations across all campuses. Former
+                            business major with a passion for logistics.</p>
+                        <div class="member-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Every minute saved on grocery shopping is a minute gained for studying."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../Images/TeamMember02.jpg" alt="Emily Rodriguez">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Emily Rodriguez</h3>
+                        <span class="member-role">Head of Procurement</span>
+                        <p>Builds relationships with local farms and suppliers to bring you the freshest products.
+                            Nutrition science background with a focus on quality.</p>
+                        <div class="member-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Quality ingredients are the foundation of healthy student lives."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../Images/TeamMember03.jpg" alt="David Kim">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>David Kim</h3>
+                        <span class="member-role">Technology Lead</span>
+                        <p>Leads our tech team in creating the seamless shopping experience you love. Full-stack
+                            developer passionate about user experience.</p>
+                        <div class="member-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Great technology should make life simpler, not more complicated."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-cta">
+                <h3>Join Our Growing Team</h3>
+                <p>We're always looking for passionate students and graduates who want to make a difference in the lives
+                    of university students.</p>
+                <a href="contact-us.html?subject=Career" class="btn btn-primary">View Open Positions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="our-values">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <p class="section-subtitle">The principles that guide everything we do at FreshMart</p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Fresh Quality</h3>
+                    <p>We source only the freshest products from trusted local farms and regions. Every item is
+                        carefully selected and delivered with proper refrigeration.</p>
+                    <ul class="value-features">
+                        <li>Daily quality checks</li>
+                        <li>Direct farm partnerships</li>
+                        <li>Proper cold chain delivery</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Student Focused</h3>
+                    <p>Everything we do is designed with student needs in mind - from pricing to delivery times that
+                        work around class schedules.</p>
+                    <ul class="value-features">
+                        <li>Student-only discounts</li>
+                        <li>Late-night delivery options</li>
+                        <li>Campus-specific offerings</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>We promise and deliver groceries within 30 minutes. Perfect for busy students who need essentials
+                        quickly between classes.</p>
+                    <ul class="value-features">
+                        <li>30-minute guarantee</li>
+                        <li>Real-time tracking</li>
+                        <li>Contactless delivery</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>Special student discounts and competitive pricing on all products. We believe quality groceries
+                        should be accessible to every student.</p>
+                    <ul class="value-features">
+                        <li>Up to 20% student discount</li>
+                        <li>Price match guarantee</li>
+                        <li>Budget-friendly bundles</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to reducing food waste and our environmental impact through smart sourcing and
+                        eco-friendly packaging.</p>
+                    <ul class="value-features">
+                        <li>Eco-friendly packaging</li>
+                        <li>Food waste reduction</li>
+                        <li>Local sourcing</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>We actively support student communities through partnerships, events, and donations to campus
+                        food banks.</p>
+                    <ul class="value-features">
+                        <li>Campus partnerships</li>
+                        <li>Food bank donations</li>
+                        <li>Student events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Milestones -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">Our Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Best Student Startup 2023</h3>
+                    <p>Awarded by University Entrepreneurship Network for innovation in student services</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Green Business Certified</h3>
+                    <p>Recognized for our sustainable practices and eco-friendly delivery methods</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>4.8/5 Student Rating</h3>
+                    <p>Based on 10,000+ student reviews across 25+ university campuses</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>50+ Local Partners</h3>
+                    <p>Strong partnerships with local farms, suppliers, and university organizations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Partners -->
+    <section class="campus-partners">
+        <div class="container">
+            <h2 class="section-title">University Partners</h2>
+            <p class="section-subtitle">Currently serving students across these campuses</p>
+
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="../images/UnuversityPartnerLogo01.jpg" alt="University 1">
+                    <span>State University</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="../images/UnuversityPartnerLogo02.jpg" alt="University 2">
+                    <span>Tech Institute</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="../images/UnuversityPartnerLogo03.jpg" alt="University 3">
+                    <span>City College</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="../images/UnuversityPartnerLogo04.jpg" alt="University 4">
+                    <span>Metro University</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="../images/UnuversityPartnerLogo05.jpg" alt="University 5">
+                    <span>Valley State</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="../Images/UnuversityPartnerLogo06.jpg" alt="University 6">
+                    <span>Coastal College</span>
+                </div>
+            </div>
+
+            <div class="expansion-cta">
+                <h3>Want FreshMart at Your Campus?</h3>
+                <p>We're expanding to new universities! Help bring FreshMart to your campus.</p>
+                <a href="contact-us.html?subject=Campus Expansion" class="btn btn-outline">Suggest Your Campus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Students Say</h2>
+            <p class="section-subtitle">Hear from the students who use FreshMart every day</p>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"FreshMart has been a lifesaver during exam season! I can get healthy snacks delivered right
+                            to my dorm in 20 minutes. The student discount makes it affordable too!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="../images/Student01.jpg" alt="Jessica">
+                        <div class="author-info">
+                            <strong>Jessica M.</strong>
+                            <span>Computer Science, State University</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As an international student, finding familiar ingredients was tough until I found FreshMart.
+                            They have everything I need, and the quality is always excellent."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="../images/Student02.jpg" alt="Alex">
+                        <div class="author-info">
+                            <strong>Alex K.</strong>
+                            <span>International Student, Tech Institute</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The 30-minute delivery is no joke! I ordered between classes and had my groceries before my
+                            next lecture. Perfect for busy student schedules."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="../images/Student03.jpg" alt="Maria">
+                        <div class="author-info">
+                            <strong>Maria L.</strong>
+                            <span>Business Major, City College</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience FreshMart?</h2>
+                <p>Join thousands of students who trust FreshMart for their grocery needs</p>
+                <div class="cta-buttons">
+                    <a href="store.html" class="btn btn-primary">Start Shopping</a>
+                    <a href="contact-us.html" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/about-us.js"></script>
+</body>
+
+</html>

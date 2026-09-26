@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - My Account</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>FreshMart</span>
+                </a>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="store.html" class="nav-link">Store</a>
+                <a href="category.html" class="nav-link">Categories</a>
+                <a href="offers.html" class="nav-link">Offers</a>
+                <a href="about-us.html" class="nav-link">About Us</a>
+                <a href="contact-us.html" class="nav-link">Contact</a>
+
+                <div class="nav-icons">
+                    <a href="search-results.html" class="nav-icon"><i class="fas fa-search"></i></a>
+                    <a href="profile.html" class="nav-icon auth-link active"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="nav-icon cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="container">
+            <div class="profile-header-content">
+                <div class="user-avatar">
+                    <img src="../images/user-avatar.jpg" alt="User Avatar" class="avatar-img" id="userAvatar">
+                    <div class="avatar-overlay">
+                        <button class="avatar-edit" onclick="openAvatarEditor()">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="online-status online" title="Online"></div>
+                </div>
+                <div class="user-info">
+                    <h1 id="userName">Welcome, Sarah Johnson!</h1>
+                    <p class="user-email" id="userEmail">sarah.johnson@university.edu</p>
+                    <div class="user-badges">
+                        <span class="badge student-badge"><i class="fas fa-graduation-cap"></i> Student Member</span>
+                        <span class="badge loyalty-badge"><i class="fas fa-crown"></i> Gold Member</span>
+                        <span class="badge verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <div class="user-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="totalOrders">12</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="loyaltyPoints">1,250</span>
+                            <span class="stat-label">Points</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="memberSince">186</span>
+                            <span class="stat-label">Days</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="savingsTotal">$147.50</span>
+                            <span class="stat-label">Saved</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-primary" onclick="switchTab('personal')">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                    <button class="btn btn-outline" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Navigation -->
+    <section class="profile-nav">
+        <div class="container">
+            <nav class="profile-tabs">
+                <button class="tab-btn active" data-tab="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </button>
+                <button class="tab-btn" data-tab="personal">
+                    <i class="fas fa-user-edit"></i>
+                    Personal Info
+                </button>
+                <button class="tab-btn" data-tab="addresses">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Address Book
+                </button>
+                <button class="tab-btn" data-tab="orders">
+                    <i class="fas fa-shopping-bag"></i>
+                    Order History
+                    <span class="tab-badge">3</span>
+                </button>
+                <button class="tab-btn" data-tab="wishlist">
+                    <i class="fas fa-heart"></i>
+                    Wishlist
+                    <span class="tab-badge">8</span>
+                </button>
+                <button class="tab-btn" data-tab="security">
+                    <i class="fas fa-shield-alt"></i>
+                    Security
+                </button>
+                <button class="tab-btn" data-tab="notifications">
+                    <i class="fas fa-bell"></i>
+                    Notifications
+                    <span class="tab-badge">5</span>
+                </button>
+                <button class="tab-btn" data-tab="preferences">
+                    <i class="fas fa-cog"></i>
+                    Preferences
+                </button>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+        <div class="container">
+            <!-- Dashboard Tab -->
+            <div id="dashboard" class="profile-tab active">
+                <div class="tab-header">
+                    <h2>Account Dashboard</h2>
+                    <p>Welcome back, Sarah! Here's your account overview</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Quick Stats -->
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Recent Orders</h3>
+                            <p>You have <strong id="recentOrdersCount">3</strong> orders in the last 30 days</p>
+                            <a href="#orders" class="stat-link" onclick="switchTab('orders')">View All Orders</a>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            15%
+                        </div>
+                    </div>
+
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Offers</h3>
+                            <p>You have <strong id="activeOffers">5</strong> special offers available</p>
+                            <a href="offers.html" class="stat-link">View Offers</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Wishlist</h3>
+                            <p>You have <strong id="wishlistCount">8</strong> items in your wishlist</p>
+                            <a href="#wishlist" class="stat-link" onclick="switchTab('wishlist')">View Wishlist</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card info">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Loyalty Points</h3>
+                            <p>You have <strong id="pointsBalance">1,250</strong> points available</p>
+                            <a href="#" class="stat-link" onclick="showRedeemModal()">Redeem Points</a>
+                        </div>
+                        <div class="progress-ring">
+                            <svg width="60" height="60">
+                                <circle cx="30" cy="30" r="25" stroke="#e9ecef" stroke-width="4" fill="none"></circle>
+                                <circle cx="30" cy="30" r="25" stroke="#4CAF50" stroke-width="4" fill="none"
+                                    stroke-dasharray="157" stroke-dashoffset="47.1" stroke-linecap="round"></circle>
+                            </svg>
+                            <span>70%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#orders" class="view-all" onclick="switchTab('orders')">View All</a>
+                    </div>
+                    <div class="activity-list" id="recentActivity">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Order #ORD-789123</strong> has been delivered successfully</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <button class="activity-action" onclick="viewOrderDetails('ORD-789123')">View
+                                Details</button>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon info">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>You earned <strong>50 loyalty points</strong> for your recent order</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Your wishlist item <strong>Organic Apples</strong> is back in stock</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                            <button class="activity-action" onclick="addToCartFromWishlist('apple')">Add to
+                                Cart</button>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon primary">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>New student discount available: <strong>20% off all fruits</strong></p>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                            <button class="activity-action" onclick="window.location.href='offers.html'">View
+                                Offer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-section">
+                    <h3>Quick Actions</h3>
+                    <div class="action-grid">
+                        <button class="action-btn" onclick="switchTab('personal')">
+                            <i class="fas fa-user-edit"></i>
+                            Update Profile
+                        </button>
+                        <button class="action-btn" onclick="switchTab('addresses')">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Manage Addresses
+                        </button>
+                        <button class="action-btn" onclick="window.location.href='store.html'">
+                            <i class="fas fa-shopping-cart"></i>
+                            Continue Shopping
+                        </button>
+                        <button class="action-btn" onclick="switchTab('security')">
+                            <i class="fas fa-shield-alt"></i>
+                            Security Settings
+                        </button>
+                        <button class="action-btn" onclick="switchTab('notifications')">
+                            <i class="fas fa-bell"></i>
+                            Notifications
+                        </button>
+                        <button class="action-btn" onclick="downloadOrderHistory()">
+                            <i class="fas fa-download"></i>
+                            Export Data
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loyalty Program -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Loyalty Program</h3>
+                        <span class="loyalty-tier">Gold Member</span>
+                    </div>
+                    <div class="loyalty-card">
+                        <div class="loyalty-info">
+                            <div class="loyalty-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>1,250 / 1,800 points</span>
+                                    <span>70% to Platinum</span>
+                                </div>
+                            </div>
+                            <div class="loyalty-benefits">
+                                <h4>Your Benefits:</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Free delivery on all orders</li>
+                                    <li><i class="fas fa-check"></i> Early access to sales</li>
+                                    <li><i class="fas fa-check"></i> Double loyalty points</li>
+                                    <li><i class="fas fa-clock"></i> Birthday surprise (Unlocks in 15 days)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="loyalty-actions">
+                            <button class="btn btn-primary" onclick="showRedeemModal()">Redeem Points</button>
+                            <button class="btn btn-outline" onclick="showLoyaltyInfo()">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Information Tab -->
+            <div id="personal" class="profile-tab">
+                <div class="tab-header">
+                    <h2>Personal Information</h2>
+                    <p>Manage your personal details and preferences</p>
+                </div>
+
+                <form class="profile-form" id="personalInfoForm">
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" value="Sarah" required>
+                                <div class="form-hint">Your legal first name</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" value="Johnson" required>
+                                <div class="form-hint">Your legal last name</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" class="form-control" value="sarah.johnson@university.edu"
+                                    required>
+                                <div class="form-hint">We'll send order confirmations to this email</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" value="(555) 123-4567" required>
+                                <div class="form-hint">For delivery updates and notifications</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dob" class="form-label">Date of Birth</label>
+                                <input type="date" id="dob" class="form-control" value="1998-05-15">
+                                <div class="form-hint">For birthday surprises and age verification</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female" checked>
+                                        <span class="radio-checkmark"></span>
+                                        Female
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male">
+                                        <span class="radio-checkmark"></span>
+                                        Male
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="other">
+                                        <span class="radio-checkmark"></span>
+                                        Other
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="prefer-not-to-say">
+                                        <span class="radio-checkmark"></span>
+                                        Prefer not to say
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Student Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="university" class="form-label">University *</label>
+                                <select id="university" class="form-control" required>
+                                    <option value="">Select University</option>
+                                    <option value="state" selected>State University</option>
+                                    <option value="tech">Tech Institute</option>
+                                    <option value="city">City College</option>
+                                    <option value="metro">Metro University</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentId" class="form-label">Student ID *</label>
+                                <input type="text" id="studentId" class="form-control" value="S12345678" required
+                                    placeholder="Enter your student ID">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="major" class="form-label">Major/Program</label>
+                                <input type="text" id="major" class="form-control" value="Computer Science"
+                                    placeholder="Your field of study">
+                            </div>
+                            <div class="form-group">
+                                <label for="graduationYear" class="form-label">Expected Graduation</label>
+                                <select id="graduationYear" class="form-control">
+                                    <option value="">Select Year</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025" selected>2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Communication Preferences</h3>
+                        <div class="preference-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailPromotions" checked>
+                                <span class="checkmark"></span>
+                                Send me promotional emails and special offers
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="smsNotifications" checked>
+                                <span class="checkmark"></span>
+                                Send me SMS notifications for order updates
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" checked>
+                                <span class="checkmark"></span>
+                                Subscribe to FreshMart newsletter
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="productUpdates">
+                                <span class="checkmark"></span>
+                                Notify me about new products and features
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="surveyInvites">
+                                <span class="checkmark"></span>
+                                Send me survey invitations to improve service
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="resetPersonalForm()">Reset
+                            Changes</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Address Book Tab -->
+            <div id="addresses" class="profile-tab">
+                <div class="tab-header">
+                    <h2>Address Book</h2>
+                    <p>Manage your delivery addresses</p>
+                </div>
+
+                <div class="addresses-container">
+                    <div class="addresses-header">
+                        <h3>Saved Addresses</h3>
+                        <button class="btn btn-primary" onclick="openAddAddressModal()">
+                            <i class="fas fa-plus"></i>
+                            Add New Address
+                        </button>
+                    </div>
+
+                    <div class="addresses-grid" id="addressesGrid">
+                        <div class="address-card default">
+                            <div class="address-header">
+                                <span class="address-label">Home</span>
+                                <span class="address-badge">Default</span>
+                            </div>
+                            <div class="address-details">
+                                <p><strong>Sarah Johnson</strong></p>
+                                <p>123 University Avenue</p>
+                                <p>Apartment 4B, Campus District</p>
+                                <p>University City, CA 12345</p>
+                                <p class="address-phone"><i class="fas fa-phone"></i> (555) 123-4567</p>
+                            </div>
+                            <div class="address-actions">
+                                <button class="btn-action" onclick="editAddress(1)" title="Edit Address">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-action" onclick="setDefaultAddress(1)" title="Set as Default"
+                                    disabled>
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="btn-action delete" onclick="deleteAddress(1)" title="Delete Address">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="address-header">
+                                <span class="address-label">Campus Dorm</span>
+                            </div>
+                            <div class="address-details">
+                                <p><strong>Sarah Johnson</strong></p>
+                                <p>456 Student Residence Hall</p>
+                                <p>Room 210, North Campus</p>
+                                <p>University City, CA 12345</p>
+                                <p class="address-phone"><i class="fas fa-phone"></i> (555) 123-4567</p>
+                            </div>
+                            <div class="address-actions">
+                                <button class="btn-action" onclick="editAddress(2)" title="Edit Address">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-action" onclick="setDefaultAddress(2)" title="Set as Default">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="btn-action delete" onclick="deleteAddress(2)" title="Delete Address">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="address-header">
+                                <span class="address-label">Parents' House</span>
+                            </div>
+                            <div class="address-details">
+                                <p><strong>Sarah Johnson</strong></p>
+                                <p>789 Oak Street</p>
+                                <p>Springfield, IL 62704</p>
+                                <p class="address-phone"><i class="fas fa-phone"></i> (555) 987-6543</p>
+                            </div>
+                            <div class="address-actions">
+                                <button class="btn-action" onclick="editAddress(3)" title="Edit Address">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-action" onclick="setDefaultAddress(3)" title="Set as Default">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button class="btn-action delete" onclick="deleteAddress(3)" title="Delete Address">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Tips -->
+                    <div class="address-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Tips for Better Delivery</h4>
+                        <ul>
+                            <li>Add specific delivery instructions for each address</li>
+                            <li>Include apartment numbers and building codes</li>
+                            <li>Set your most frequently used address as default</li>
+                            <li>Update addresses when you move between semesters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order History Tab -->
+            <div id="orders" class="profile-tab">
+                <div class="tab-header">
+                    <h2>Order History</h2>
+                    <p>View and manage your past orders</p>
+                </div>
+
+                <div class="orders-container">
+                    <div class="orders-filter">
+                        <div class="filter-group">
+                            <select id="orderFilter" class="filter-select">
+                                <option value="all">All Orders</option>
+                                <option value="pending">Pending</option>
+                                <option value="processing">Processing</option>
+                                <option value="shipped">Shipped</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                            <select id="timeFilter" class="filter-select">
+                                <option value="all">All Time</option>
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 90 Days</option>
+                                <option value="365">Last Year</option>
+                            </select>
+                        </div>
+                        <div class="search-box">
+                            <input type="text" id="orderSearch" placeholder="Search orders..." class="search-input">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="orders-stats">
+                        <div class="order-stat">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Total Orders</span>
+                        </div>
+                        <div class="order-stat">
+                            <span class="stat-value">$487.65</span>
+                            <span class="stat-label">Total Spent</span>
+                        </div>
+                        <div class="order-stat">
+                            <span class="stat-value">$147.50</span>
+                            <span class="stat-label">Total Saved</span>
+                        </div>
+                        <div class="order-stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Avg. Rating</span>
+                        </div>
+                    </div>
+
+                    <div class="orders-list" id="ordersList">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <h4>Order #ORD-789123</h4>
+                                    <span class="order-date">Placed on March 15, 2024</span>
+                                </div>
+                                <div class="order-status delivered">
+                                    <i class="fas fa-check-circle"></i>
+                                    Delivered
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order-items-preview">
+                                    <div class="item-preview">
+                                        <img src="../images/products/apple.jpg" alt="Organic Apples">
+                                        <span>Organic Apples (2kg)</span>
+                                    </div>
+                                    <div class="item-preview">
+                                        <img src="../images/products/milk.jpg" alt="Fresh Milk">
+                                        <span>Fresh Milk (1L)</span>
+                                    </div>
+                                    <div class="item-preview">
+                                        <img src="../images/products/bread.jpg" alt="Whole Wheat Bread">
+                                        <span>Whole Wheat Bread</span>
+                                    </div>
+                                    <div class="more-items">+2 more</div>
+                                </div>
+                                <div class="order-total">
+                                    <strong>$15.14</strong>
+                                    <span>3 items</span>
+                                </div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-outline" onclick="viewOrderDetails('ORD-789123')">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                                <button class="btn btn-primary" onclick="reorder('ORD-789123')">
+                                    <i class="fas fa-redo"></i>
+                                    Reorder
+                                </button>
+                                <button class="btn btn-outline" onclick="downloadInvoice('ORD-789123')">
+                                    <i class="fas fa-download"></i>
+                                    Invoice
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <h4>Order #ORD-456789</h4>
+                                    <span class="order-date">Placed on March 10, 2024</span>
+                                </div>
+                                <div class="order-status delivered">
+                                    <i class="fas fa-check-circle"></i>
+                                    Delivered
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order-items-preview">
+                                    <div class="item-preview">
+                                        <img src="../images/products/banana.jpg" alt="Fresh Bananas">
+                                        <span>Fresh Bananas (1kg)</span>
+                                    </div>
+                                    <div class="item-preview">
+                                        <img src="../images/products/yogurt.jpg" alt="Greek Yogurt">
+                                        <span>Greek Yogurt</span>
+                                    </div>
+                                </div>
+                                <div class="order-total">
+                                    <strong>$8.47</strong>
+                                    <span>2 items</span>
+                                </div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-outline" onclick="viewOrderDetails('ORD-456789')">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                                <button class="btn btn-primary" onclick="reorder('ORD-456789')">
+                                    <i class="fas fa-redo"></i>
+                                    Reorder
+                                </button>
+                                <button class="btn btn-outline" onclick="downloadInvoice('ORD-456789')">
+                                    <i class="fas fa-download"></i>
+                                    Invoice
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <h4>Order #ORD-123456</h4>
+                                    <span class="order-date">Placed on March 5, 2024</span>
+                                </div>
+                                <div class="order-status processing">
+                                    <i class="fas fa-truck"></i>
+                                    Out for Delivery
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order <button class="btn-logout" onclick="logoutSession('session2')">
+                                    Logout</button>
+                                </div>
+                                <div class="login-session">
+                                    <div class="session-info">
+                                        <i class="fas fa-laptop"></i>
+                                        <div>
+                                            <strong>MacBook Pro</strong>
+                                            <span>Firefox on macOS • New York, US</span>
+                                            <small>1 day ago</small>
+                                        </div>
+                                    </div>
+                                    <button class="btn-logout" onclick="logoutSession('session3')">Logout</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" onclick="logoutAllSessions()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout All Sessions
+                            </button>
+                        </div>
+
+                        <!-- Account Recovery -->
+                        <div class="security-section">
+                            <h3>Account Recovery</h3>
+                            <div class="recovery-options">
+                                <div class="recovery-option">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <h4>Recovery Email</h4>
+                                        <p>sarah.backup@email.com</p>
+                                    </div>
+                                    <button class="btn btn-outline" onclick="changeRecoveryEmail()">Change</button>
+                                </div>
+                                <div class="recovery-option">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <h4>Recovery Phone</h4>
+                                        <p>(555) 123-4567</p>
+                                    </div>
+                                    <button class="btn btn-outline" onclick="changeRecoveryPhone()">Change</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div id="notifications" class="profile-tab">
+                    <div class="tab-header">
+                        <h2>Notification Settings</h2>
+                        <p>Manage how you receive notifications</p>
+                    </div>
+
+                    <div class="notification-sections">
+                        <!-- Email Notifications -->
+                        <div class="notification-section">
+                            <h3>Email Notifications</h3>
+                            <div class="notification-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="emailOrderUpdates" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Order updates and delivery notifications</strong>
+                                        <span>Order confirmations, shipping updates, and delivery alerts</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="emailPromo" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Promotional offers and discounts</strong>
+                                        <span>Special deals, seasonal sales, and exclusive offers</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="emailNewsletter" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>FreshMart newsletter and updates</strong>
+                                        <span>Company news, product launches, and community updates</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="emailProductUpdates">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Product recommendations</strong>
+                                        <span>Personalized suggestions based on your shopping habits</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Push Notifications -->
+                        <div class="notification-section">
+                            <h3>Push Notifications</h3>
+                            <div class="notification-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="pushOrderUpdates" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Order status updates</strong>
+                                        <span>Real-time updates about your order progress</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="pushDelivery" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Delivery notifications</strong>
+                                        <span>Alerts when your delivery is on the way or arrived</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="pushPromo" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Special offers and deals</strong>
+                                        <span>Flash sales, limited-time offers, and exclusive discounts</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="pushStockAlerts">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Stock alerts</strong>
+                                        <span>Notifications when wishlist items are back in stock</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- SMS Notifications -->
+                        <div class="notification-section">
+                            <h3>SMS Notifications</h3>
+                            <div class="notification-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="smsDelivery" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Delivery updates and tracking</strong>
+                                        <span>Text messages with delivery status and tracking links</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="smsOrder" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Important order alerts</strong>
+                                        <span>Critical updates about your orders and account</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="smsPromo">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Promotional messages</strong>
+                                        <span>Special offers and discounts via text message</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Notification Frequency -->
+                        <div class="notification-section">
+                            <h3>Notification Frequency</h3>
+                            <div class="frequency-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="frequency" value="realtime" checked>
+                                    <span class="radio-checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Real-time</strong>
+                                        <span>Receive notifications immediately as they occur</span>
+                                    </div>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="frequency" value="daily">
+                                    <span class="radio-checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Daily Digest</strong>
+                                        <span>Receive one summary email per day</span>
+                                    </div>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="frequency" value="weekly">
+                                    <span class="radio-checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Weekly Summary</strong>
+                                        <span>Receive one summary email per week</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="notification-actions">
+                            <button class="btn btn-primary" onclick="saveNotificationSettings()">
+                                <i class="fas fa-save"></i>
+                                Save Preferences
+                            </button>
+                            <button class="btn btn-outline" onclick="resetNotificationSettings()">
+                                <i class="fas fa-undo"></i>
+                                Reset to Default
+                            </button>
+                            <button class="btn btn-outline" onclick="testNotification()">
+                                <i class="fas fa-bell"></i>
+                                Test Notification
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences Tab -->
+                <div id="preferences" class="profile-tab">
+                    <div class="tab-header">
+                        <h2>Account Preferences</h2>
+                        <p>Customize your FreshMart experience</p>
+                    </div>
+
+                    <div class="preferences-sections">
+                        <!-- Language & Region -->
+                        <div class="preference-section">
+                            <h3>Language & Region</h3>
+                            <div class="preference-options">
+                                <div class="preference-group">
+                                    <label for="language" class="form-label">Language</label>
+                                    <select id="language" class="form-control">
+                                        <option value="en" selected>English</option>
+                                        <option value="es">Español</option>
+                                        <option value="fr">Français</option>
+                                        <option value="de">Deutsch</option>
+                                    </select>
+                                </div>
+                                <div class="preference-group">
+                                    <label for="currency" class="form-label">Currency</label>
+                                    <select id="currency" class="form-control">
+                                        <option value="USD" selected>US Dollar ($)</option>
+                                        <option value="EUR">Euro (€)</option>
+                                        <option value="GBP">British Pound (£)</option>
+                                        <option value="CAD">Canadian Dollar (C$)</option>
+                                    </select>
+                                </div>
+                                <div class="preference-group">
+                                    <label for="timezone" class="form-label">Timezone</label>
+                                    <select id="timezone" class="form-control">
+                                        <option value="est" selected>Eastern Time (ET)</option>
+                                        <option value="cst">Central Time (CT)</option>
+                                        <option value="mst">Mountain Time (MT)</option>
+                                        <option value="pst">Pacific Time (PT)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Display Preferences -->
+                        <div class="preference-section">
+                            <h3>Display Preferences</h3>
+                            <div class="preference-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="darkMode">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Dark Mode</strong>
+                                        <span>Use dark theme for better night viewing</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="highContrast" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>High Contrast Mode</strong>
+                                        <span>Enhanced color contrast for better readability</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="largeText">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Large Text Size</strong>
+                                        <span>Increase text size for better readability</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Shopping Preferences -->
+                        <div class="preference-section">
+                            <h3>Shopping Preferences</h3>
+                            <div class="preference-options">
+                                <div class="preference-group">
+                                    <label for="defaultSort" class="form-label">Default Product Sort</label>
+                                    <select id="defaultSort" class="form-control">
+                                        <option value="popularity" selected>Popularity</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="name">Name: A to Z</option>
+                                        <option value="newest">Newest First</option>
+                                    </select>
+                                </div>
+                                <div class="preference-group">
+                                    <label for="itemsPerPage" class="form-label">Items Per Page</label>
+                                    <select id="itemsPerPage" class="form-control">
+                                        <option value="12">12 items</option>
+                                        <option value="24" selected>24 items</option>
+                                        <option value="48">48 items</option>
+                                        <option value="96">96 items</option>
+                                    </select>
+                                </div>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="autoAddToCart" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Auto-add to Cart</strong>
+                                        <span>Automatically add items to cart when clicking "Buy Now"</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="saveCart">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Save Cart Between Sessions</strong>
+                                        <span>Keep cart items when you logout and return</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Dietary Preferences -->
+                        <div class="preference-section">
+                            <h3>Dietary Preferences</h3>
+                            <div class="preference-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="vegetarian">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Vegetarian</strong>
+                                        <span>Show vegetarian-friendly products</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="vegan">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Vegan</strong>
+                                        <span>Show vegan-friendly products</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="glutenFree">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Gluten-Free</strong>
+                                        <span>Show gluten-free products</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="organic">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Organic Preferred</strong>
+                                        <span>Show organic options first</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Privacy Settings -->
+                        <div class="preference-section">
+                            <h3>Privacy Settings</h3>
+                            <div class="preference-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="searchHistory" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Save Search History</strong>
+                                        <span>Remember your searches for better recommendations</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="browsingHistory" checked>
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Save Browsing History</strong>
+                                        <span>Remember viewed products for personalized experience</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="personalizedAds">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Personalized Advertising</strong>
+                                        <span>Show ads based on your shopping preferences</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="dataSharing">
+                                    <span class="checkmark"></span>
+                                    <div class="option-details">
+                                        <strong>Data Sharing for Analytics</strong>
+                                        <span>Help improve our service by sharing anonymous data</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="preferences-actions">
+                            <button class="btn btn-primary" onclick="savePreferences()">
+                                <i class="fas fa-save"></i>
+                                Save All Preferences
+                            </button>
+                            <button class="btn btn-outline" onclick="resetPreferences()">
+                                <i class="fas fa-undo"></i>
+                                Reset to Default
+                            </button>
+                            <button class="btn btn-outline" onclick="exportPreferences()">
+                                <i class="fas fa-download"></i>
+                                Export Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Add Address Modal -->
+    <div class="modal" id="addAddressModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Address</h3>
+                <button class="modal-close" onclick="closeAddAddressModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="address-form" id="addressForm">
+                    <div class="form-group">
+                        <label for="addressLabel" class="form-label">Address Label *</label>
+                        <input type="text" id="addressLabel" class="form-control" placeholder="e.g., Home, Work, Campus"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addressFirstName" class="form-label">First Name *</label>
+                            <input type="text" id="addressFirstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressLastName" class="form-label">Last Name *</label>
+                            <input type="text" id="addressLastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressPhone" class="form-label">Phone Number *</label>
+                        <input type="tel" id="addressPhone" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressLine1" class="form-label">Address Line 1 *</label>
+                        <input type="text" id="addressLine1" class="form-control" placeholder="Street address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressLine2" class="form-label">Address Line 2</label>
+                        <input type="text" id="addressLine2" class="form-control"
+                            placeholder="Apartment, suite, unit, etc.">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addressCity" class="form-label">City *</label>
+                            <input type="text" id="addressCity" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressState" class="form-label">State *</label>
+                            <input type="text" id="addressState" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addressZip" class="form-label">ZIP Code *</label>
+                            <input type="text" id="addressZip" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressCountry" class="form-label">Country *</label>
+                            <select id="addressCountry" class="form-control" required>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliveryInstructions" class="form-label">Delivery Instructions</label>
+                        <textarea id="deliveryInstructions" class="form-control"
+                            placeholder="e.g., Leave at front door, Ring bell, etc." rows="3"></textarea>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="setDefaultAddress">
+                            <span class="checkmark"></span>
+                            Set as default delivery address
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="closeAddAddressModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Address</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Address Modal -->
+    <div class="modal" id="editAddressModal">
+        <!-- Similar structure to add address modal -->
+    </div>
+
+    <!-- Avatar Editor Modal -->
+    <div class="modal" id="avatarEditorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Update Profile Picture</h3>
+                <button class="modal-close" onclick="closeAvatarEditor()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="avatar-editor">
+                    <div class="avatar-preview">
+                        <img src="../images/user-avatar.jpg" alt="Avatar Preview" id="avatarPreview">
+                    </div>
+                    <div class="avatar-options">
+                        <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                        <button class="btn btn-outline" onclick="document.getElementById('avatarUpload').click()">
+                            <i class="fas fa-upload"></i>
+                            Upload Photo
+                        </button>
+                        <button class="btn btn-outline" onclick="useDefaultAvatar()">
+                            <i class="fas fa-user"></i>
+                            Use Default
+                        </button>
+                    </div>
+                    <div class="avatar-gallery">
+                        <h4>Choose from Gallery</h4>
+                        <div class="gallery-options">
+                            <img src="../images/avatars/avatar1.jpg" alt="Avatar 1"
+                                onclick="selectGalleryAvatar(this.src)">
+                            <img src="../images/avatars/avatar2.jpg" alt="Avatar 2"
+                                onclick="selectGalleryAvatar(this.src)">
+                            <img src="../images/avatars/avatar3.jpg" alt="Avatar 3"
+                                onclick="selectGalleryAvatar(this.src)">
+                            <img src="../images/avatars/avatar4.jpg" alt="Avatar 4"
+                                onclick="selectGalleryAvatar(this.src)">
+                        </div>
+                    </div>
+                    <div class="avatar-actions">
+                        <button class="btn btn-primary" onclick="saveAvatar()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3>Order Details</h3>
+                <button class="modal-close" onclick="closeOrderDetailsModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Order details will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Redeem Points Modal -->
+    <div class="modal" id="redeemPointsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Redeem Loyalty Points</h3>
+                <button class="modal-close" onclick="closeRedeemModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="redeem-content">
+                    <div class="points-balance">
+                        <h4>Your Points Balance: <span class="points-amount">1,250</span></h4>
+                        <p>100 points = $1.00 discount</p>
+                    </div>
+                    <div class="redeem-options">
+                        <div class="redeem-option">
+                            <div class="option-details">
+                                <h5>500 Points</h5>
+                                <p>$5.00 discount</p>
+                            </div>
+                            <button class="btn btn-outline" onclick="redeemPoints(500)">Redeem</button>
+                        </div>
+                        <div class="redeem-option">
+                            <div class="option-details">
+                                <h5>1,000 Points</h5>
+                                <p>$10.00 discount</p>
+                            </div>
+                            <button class="btn btn-outline" onclick="redeemPoints(1000)">Redeem</button>
+                        </div>
+                        <div class="redeem-option">
+                            <div class="option-details">
+                                <h5>Custom Amount</h5>
+                                <p>Enter specific points to redeem</p>
+                            </div>
+                            <div class="custom-redeem">
+                                <input type="number" id="customPoints" min="100" max="1250" placeholder="Points">
+                                <button class="btn btn-primary" onclick="redeemCustomPoints()">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/profile.js"></script>
+</body>
+
+</html>

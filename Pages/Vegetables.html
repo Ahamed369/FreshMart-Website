@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Vegetables - FreshMart</title>
+    <link rel="stylesheet" href="../Styles/ProductCategoryList.css/category.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Add this style section for the modal -->
+    <style>
+        /* Modal Base Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal.show {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            background: #f8f9fa;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: #f0f0f0;
+            color: #e74c3c;
+        }
+
+        .modal-body {
+            padding: 20px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        /* Product View Layout */
+        .product-view-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .product-view-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .product-main-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-view-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-view-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .product-view-category {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .product-view-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .rating-stars {
+            color: #f39c12;
+        }
+
+        .product-view-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .product-view-specs {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .spec-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-item i {
+            color: #3498db;
+            width: 16px;
+        }
+
+        .product-view-pricing {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .price-main {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #27ae60;
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .savings {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .quantity-selector {
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 35px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #219a52;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .btn-outline:hover {
+            border-color: #27ae60;
+            color: #27ae60;
+        }
+
+        .product-view-features {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .feature i {
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .feature p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-view-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+
+        /* Toast Styles */
+        .toast {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 10001;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            max-width: 300px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            background: #f44336;
+        }
+
+        .toast.warning {
+            background: #ff9800;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>FreshMart</span>
+                </a>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="store.html" class="nav-link">Store</a>
+                <a href="category.html" class="nav-link active">Categories</a>
+                <a href="offers.html" class="nav-link">Offers</a>
+                <a href="about-us.html" class="nav-link">About Us</a>
+                <a href="contact-us.html" class="nav-link">Contact</a>
+
+                <div class="nav-icons">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <a href="auth.html" class="nav-icon auth-link"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="nav-icon cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="category-header" style="background: var(--vegetables-color);">
+        <div class="container">
+            <div class="category-header-content">
+                <h1>Fresh Vegetables</h1>
+                <p>Farm-fresh vegetables and greens. Crisp, nutritious, and perfect for your healthy meals.</p>
+
+                <div class="category-stats">
+                    <div class="category-stat">
+                        <i class="fas fa-carrot"></i>
+                        <span>3 Products</span>
+                    </div>
+                    <div class="category-stat">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>30-min Delivery</span>
+                    </div>
+                    <div class="category-stat">
+                        <i class="fas fa-seedling"></i>
+                        <span>Farm Fresh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-main">
+        <div class="container">
+            <div class="category-products-grid">
+                <div class="category-product-card">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        alt="Fresh Potatoes" class="category-product-image">
+                    <div class="category-product-info">
+                        <h3 class="category-product-title">Fresh Potatoes</h3>
+                        <p class="category-product-description">Versatile potatoes perfect for boiling, baking, frying,
+                            or mashing. Rich in carbohydrates and potassium.</p>
+
+                        <div class="category-product-meta">
+                            <div class="category-product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.2</span>
+                                <span>(94)</span>
+                            </div>
+                            <div class="category-product-stock in-stock">In Stock</div>
+                        </div>
+
+                        <div class="category-product-price">
+                            <span class="category-product-current">$3.49</span>
+                        </div>
+
+
+                        <div class="category-product-actions">
+                            <button class="btn-category-add-cart">
+                                <i class="fas fa-shopping-cart"></i>Add to Cart
+                            </button>
+                            <button class="btn-category-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="btn-category-view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-product-card">
+                    <div class="category-product-badge">Sale</div>
+                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        alt="Fresh Tomatoes" class="category-product-image">
+                    <div class="category-product-info">
+                        <h3 class="category-product-title">Fresh Tomatoes</h3>
+                        <p class="category-product-description">Vine-ripened tomatoes with rich flavor. Perfect for
+                            salads, sauces, and cooking. High in lycopene.</p>
+
+                        <div class="category-product-meta">
+                            <div class="category-product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                                <span>(91)</span>
+                            </div>
+                            <div class="category-product-stock in-stock">In Stock</div>
+                        </div>
+
+                        <div class="category-product-price">
+                            <span class="category-product-current">$3.99</span>
+                            <span class="category-product-original">$4.99</span>
+                            <span class="category-product-discount">Save $1.00</span>
+                        </div>
+
+                        <div class="save-message"><small>Save $1.00 on this item!</small></div>
+                        <div class="category-product-actions">
+                            <button class="btn-category-add-cart">
+                                <i class="fas fa-shopping-cart"></i>Add to Cart
+                            </button>
+                            <button class="btn-category-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="btn-category-view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="category-product-card">
+                    <div class="category-product-badge">Healthy</div>
+                    <img src="../Images/Broccoli.jpg" alt="Fresh Broccoli" class="category-product-image">
+                    <div class="category-product-info">
+                        <h3 class="category-product-title">Fresh Broccoli</h3>
+                        <p class="category-product-description">Nutrient-packed broccoli with crisp texture. Great for
+                            steaming, roasting, or adding to stir-fries.</p>
+
+                        <div class="category-product-meta">
+                            <div class="category-product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                                <span>(78)</span>
+                            </div>
+                            <div class="category-product-stock in-stock">In Stock</div>
+                        </div>
+
+                        <div class="category-product-price">
+                            <span class="category-product-current">$4.49</span>
+                        </div>
+
+                        <div class="category-product-actions">
+                            <button class="btn-category-add-cart">
+                                <i class="fas fa-shopping-cart"></i>Add to Cart
+                            </button>
+                            <button class="btn-category-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="btn-category-view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="modal" id="productViewModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2>Product Details</h2>
+                <button class="modal-close" onclick="closeProductViewModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="product-view-content" id="productViewContent">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="../Functions/products.js"></script>
+    <script src="../Functions/ProductCategoryList.js/category.js"></script>
+    <script src="../Functions/cart.js"></script>
+</body>
+
+</html>

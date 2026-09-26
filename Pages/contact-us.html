@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FreshMart</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/contact-us.css">
+     <link rel="stylesheet" href="../Styles/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+</head>
+
+<body>
+    <!-- ===== ANIMATED NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Animated Logo -->
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <span class="logo-text">FreshMart</span>
+                    <div class="logo-pulse"></div>
+                </a>
+            </div>
+
+            <!-- Navigation Menu with Animations -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="store.html" class="nav-link" data-page="store">
+                    <i class="fas fa-store"></i>
+                    <span>Store</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                 
+            <a href="category.html" class="nav-link" data-page="categories">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+                <div class="link-underline"></div>
+            </a>
+
+
+                <a href="offers.html" class="nav-link" data-page="offers">
+                    <i class="fas fa-tag"></i>
+                    <span>Offers</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="about-us.html" class="nav-link" data-page="about">
+                    <i class="fas fa-users"></i>
+                    <span>About Us</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <a href="contact-us.html" class="nav-link" data-page="contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                    <div class="link-underline"></div>
+                </a>
+
+                <!-- Navigation Icons with Animations -->
+                <div class="nav-icons">
+
+                    <!-- User Account with Hover -->
+                    <a href="auth.html" class="nav-icon auth-link" aria-label="User Account">
+                        <i class="fas fa-user"></i>
+                        <div class="icon-tooltip">Account</div>
+                    </a>
+
+                    
+                <!-- Wishlist with Counter Animation -->
+                    <a href="wishlist.html" class="nav-icon wishlist-icon" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                        <div class="wishlist-pulse"></div>
+                        <div class="icon-tooltip">Wishlist</div>
+                    </a>
+
+
+                    <!-- Cart with Counter Animation -->
+                    <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <div class="cart-pulse"></div>
+                        <div class="icon-tooltip">Cart</div>
+                    </a>
+                </div>
+            </div>
+
+            
+                <!-- ===== ADMIN ICON - NEW ===== -->
+                <a href="admin.html" class="nav-icon admin-icon" aria-label="Admin Dashboard">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="admin-glow"></div>
+                    <div class="icon-tooltip">Admin</div>
+                </a>
+            </div>
+        </div>
+        
+
+            <!-- Animated Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <div class="hamburger-glow"></div>
+            </button>
+        </div>
+
+        <!-- Navbar Background Effects -->
+        <div class="nav-background"></div>
+        <div class="nav-shine"></div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Get in Touch</h1>
+        <p>Have questions? Need help? We're here to support you 24/7. Contact us through your preferred method below.
+        </p>
+    </div>
+
+
+    <!-- Tab Content -->
+    <div class="contact-content">
+        <!-- Customer Support Tab -->
+        <section id="support" class="contact-tab-content active">
+            <div class="support-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(555) 123-4567">
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="priority">Priority</label>
+                                <select id="priority" name="priority">
+                                    <option value="low">Low</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help you..." rows="6"
+                                required></textarea>
+                            <div class="char-counter">
+                                <span id="charCount">0</span>/1000 characters
+                            </div>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attachment">Attachment (Optional)</label>
+                            <div class="file-upload">
+                                <input type="file" id="attachment" name="attachment"
+                                    accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                                <label for="attachment" class="file-upload-label">
+                                    <i class="fas fa-paperclip"></i>
+                                    Choose File
+                                </label>
+                                <span class="file-name" id="fileName">No file chosen</span>
+                            </div>
+                        </div>
+
+                        <!-- reCAPTCHA -->
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="your-site-key-here"></div>
+                            <span class="error-message" id="captchaError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Quick Contact Methods -->
+                <div class="quick-contact-section">
+                    <h2>Quick Contact Methods</h2>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Phone Support</h3>
+                                <p>(555) 123-4567</p>
+                                <span class="method-hours">Available 9 AM - 10 PM</span>
+                                <a href="tel:5551234567" class="btn btn-outline">
+                                    <i class="fas fa-phone"></i>
+                                    Call Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Email Support</h3>
+                                <p>hello@freshmart.com</p>
+                                <span class="method-hours">Available 24/7</span>
+                                <a href="mailto:hello@freshmart.com" class="btn btn-outline">
+                                    <i class="fas fa-envelope"></i>
+                                    Send Email
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>WhatsApp</h3>
+                                <p>Quick messaging & updates</p>
+                                <span class="method-hours">Available 24/7</span>
+                                <a href="https://wa.me/15551234567" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Message Us
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Live Chat</h3>
+                                <p>Instant help from our team</p>
+                                <span class="method-hours">Available 24/7</span>
+                                <button class="btn btn-outline" id="liveChatBtn">
+                                    <i class="fas fa-comments"></i>
+                                    Start Chat
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <p>123 University Avenue<br>Campus District, CO 12345</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>(555) 123-4567<br>Mon-Sat 9 AM - 10 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>hello@freshmart.com<br>We reply within 2 hours</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours</strong>
+                                <p>24/7 Online Ordering<br>Delivery 8 AM - 11 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Store Locations Tab -->
+        <section id="locations" class="contact-tab-content">
+            <div class="locations-header">
+                <h2>Find a FreshMart Store Near You</h2>
+                <p>Visit us at any of our convenient locations across the university area</p>
+            </div>
+
+            <div class="locations-grid">
+                <!-- Store Search -->
+                <div class="store-search">
+                    <div class="search-input-group">
+                        <input type="text" id="storeSearch" placeholder="Search by city, zip code, or landmark..."
+                            class="search-input">
+                        <button type="button" class="search-btn" id="storeSearchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="search-filters">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" id="openNowFilter" checked>
+                            <span class="checkmark"></span>
+                            Open Now
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" id="pickupFilter">
+                            <span class="checkmark"></span>
+                            Pickup Available
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" id="deliveryFilter">
+                            <span class="checkmark"></span>
+                            Delivery Available
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Map Container -->
+                <div class="map-container">
+                    <div id="storeMap"></div>
+                    <div class="map-controls">
+                        <button class="map-control-btn" id="locateMeBtn">
+                            <i class="fas fa-location-arrow"></i>
+                            Locate Me
+                        </button>
+                        <button class="map-control-btn" id="resetMapBtn">
+                            <i class="fas fa-sync-alt"></i>
+                            Reset View
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stores List -->
+                <div class="stores-list">
+                    <h3>All Stores</h3>
+                    <div class="stores-container" id="storesContainer">
+                        <!-- Stores will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Tab -->
+        <section id="services" class="contact-tab-content">
+            <div class="services-header">
+                <h2>Our Services</h2>
+                <p>Discover the full range of services we offer to make your grocery shopping experience better</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Delivery Services -->
+                <div class="service-category">
+                    <h3>
+                        <i class="fas fa-truck"></i>
+                        Delivery Services
+                    </h3>
+                    <div class="service-cards">
+                        <div class="service-card">
+                            <div class="service-icon express">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>Express Delivery</h4>
+                            <p>Get your groceries delivered in 30-60 minutes. Perfect for urgent needs and last-minute
+                                shopping.</p>
+                            <ul>
+                                <li>30-60 minute delivery</li>
+                                <li>Real-time tracking</li>
+                                <li>Contactless delivery available</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">$4.99</span>
+                                <span class="note">or free on orders over $35</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon standard">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h4>Standard Delivery</h4>
+                            <p>Choose your preferred 2-hour delivery window. Great for planning your weekly shopping.
+                            </p>
+                            <ul>
+                                <li>2-hour delivery windows</li>
+                                <li>Next day delivery available</li>
+                                <li>Free over $25 for students</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">$2.99</span>
+                                <span class="note">free for students over $25</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon scheduled">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h4>Scheduled Delivery</h4>
+                            <p>Set up recurring deliveries for your regular groceries. Never run out of essentials
+                                again.</p>
+                            <ul>
+                                <li>Weekly/Monthly schedules</li>
+                                <li>Save your favorite items</li>
+                                <li>10% discount on recurring orders</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">Free</span>
+                                <span class="note">with subscription</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pickup Services -->
+                <div class="service-category">
+                    <h3>
+                        <i class="fas fa-store"></i>
+                        Pickup Services
+                    </h3>
+                    <div class="service-cards">
+                        <div class="service-card">
+                            <div class="service-icon pickup">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h4>Curbside Pickup</h4>
+                            <p>Order online and pick up without leaving your car. Fast, convenient, and contactless.</p>
+                            <ul>
+                                <li>Ready in 2 hours</li>
+                                <li>Text when ready</li>
+                                <li>No contact required</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">Free</span>
+                                <span class="note">no minimum order</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon instore">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <h4>In-Store Pickup</h4>
+                            <p>Pick up your order at our convenient pickup counter. Skip the lines and save time.</p>
+                            <ul>
+                                <li>Dedicated pickup counter</li>
+                                <li>Extended pickup hours</li>
+                                <li>Professional packing</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">Free</span>
+                                <span class="note">available at all locations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership & Loyalty -->
+                <div class="service-category">
+                    <h3>
+                        <i class="fas fa-crown"></i>
+                        Membership & Loyalty
+                    </h3>
+                    <div class="service-cards">
+                        <div class="service-card premium">
+                            <div class="service-icon premium">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>FreshMart Prime</h4>
+                            <p>Unlock exclusive benefits with our premium membership program.</p>
+                            <ul>
+                                <li>Free delivery on all orders</li>
+                                <li>Early access to deals</li>
+                                <li>Double loyalty points</li>
+                                <li>Priority customer support</li>
+                                <li>Monthly member-only offers</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">$9.99/month</span>
+                                <span class="note">or $99/year</span>
+                            </div>
+                            <button class="btn btn-primary">Join Prime</button>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon loyalty">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h4>Loyalty Program</h4>
+                            <p>Earn points on every purchase and redeem for discounts and free products.</p>
+                            <ul>
+                                <li>1 point per $1 spent</li>
+                                <li>Double points for students</li>
+                                <li>Birthday bonus points</li>
+                                <li>Exclusive member events</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">Free to Join</span>
+                                <span class="note">earn rewards instantly</span>
+                            </div>
+                            <button class="btn btn-outline">Sign Up Free</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Services -->
+                <div class="service-category">
+                    <h3>
+                        <i class="fas fa-concierge-bell"></i>
+                        Special Services
+                    </h3>
+                    <div class="service-cards">
+                        <div class="service-card">
+                            <div class="service-icon subscription">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <h4>Subscription Boxes</h4>
+                            <p>Curated grocery boxes delivered weekly or monthly based on your preferences.</p>
+                            <ul>
+                                <li>Healthy eating box</li>
+                                <li>Student essentials box</li>
+                                <li>Organic & local box</li>
+                                <li>Customizable options</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">From $29.99</span>
+                                <span class="note">per week</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon catering">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4>Catering & Events</h4>
+                            <p>Perfect for university events, parties, and group gatherings. Fresh, ready-to-serve
+                                options.</p>
+                            <ul>
+                                <li>Party platters</li>
+                                <li>Bulk ordering</li>
+                                <li>Custom menus</li>
+                                <li>Student group discounts</li>
+                            </ul>
+                            <div class="service-price">
+                                <span class="price">Custom Pricing</span>
+                                <span class="note">free consultation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service FAQ -->
+            <div class="service-faq">
+                <h3>Service FAQs</h3>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I schedule a delivery?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can schedule delivery during checkout. Choose your preferred date and time slot from
+                                available options. For recurring deliveries, set up a subscription in your account
+                                settings.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What's the minimum order for delivery?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The minimum order for delivery is $15. However, students get free delivery on orders over
+                                $25 with valid student ID verification.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I modify my order after placing it?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can modify your order within 30 minutes of placing it. After that, orders enter
+                                our fulfillment process. Contact support immediately for urgent changes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    </main>
+
+    <!-- Live Chat Widget -->
+    <div class="live-chat-widget" id="liveChatWidget">
+        <div class="chat-header">
+            <h4>FreshMart Support</h4>
+            <button class="chat-close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                <div class="message-content">
+                    <p>Hello! 👋 How can we help you today?</p>
+                </div>
+                <span class="message-time">Just now</span>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message..." id="chatInput">
+            <button id="sendMessage">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Trigger Button -->
+    <button class="chat-trigger" id="chatTrigger">
+        <i class="fas fa-comments"></i>
+        <span class="chat-badge">Live</span>
+    </button>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <p>Your trusted online grocery store delivering fresh, quality products right to your doorstep.
+                        Supporting university students with affordable, healthy food options.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="offers.html">Offers & Deals</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="info.html">FAQ</a></li>
+                        <li><a href="info.html">Return Policy</a></li>
+                        <li><a href="info.html">Terms & Conditions</a></li>
+                        <li><a href="info.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Campus District</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshmart.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Delivery Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FreshMart. All rights reserved. University E-commerce Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Message Sent Successfully!</h3>
+                <button class="modal-close" id="successModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-animation">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Thank you for contacting us! We've received your message and will get back to you within 2 hours.</p>
+                <p><strong>Reference ID:</strong> <span id="referenceId">FM-2024-001</span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="successModalOk">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="../Functions/main.js"></script>
+    <script src="../Functions/contact-us.js"></script>
+</body>
+
+</html>
